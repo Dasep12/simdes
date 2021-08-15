@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Use App\Http\Controllers\HomeController;
+
+Route::get('/', [HomeController::class,'index']);
