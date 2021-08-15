@@ -14,6 +14,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/plugins/slick/slick.css" rel="stylesheet">
     <link href="css/plugins/slick/slick-theme.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
 
 </head>
 
@@ -21,84 +22,92 @@
 
     <div id="wrapper">
         <div id="page-wrapper" class="gray-bg">
-        <div class="row border-bottom white-bg">
-        <nav class="navbar navbar-expand-lg navbar-static-top" role="navigation">
-            <!--<div class="navbar-header">-->
-                <!--<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">-->
+            <div class="row border-bottom white-bg">
+                <nav class="navbar navbar-expand-lg navbar-static-top" role="navigation">
+                    <!--<div class="navbar-header">-->
+                    <!--<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">-->
                     <!--<i class="fa fa-reorder"></i>-->
-                <!--</button>-->
+                    <!--</button>-->
 
-                <a href="#" class="navbar-brand">SimDes Gunung Halu</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-reorder"></i>
-                </button>
+                    <a href="#" class="navbar-brand">SID Gunung Halu</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-reorder"></i>
+                    </button>
 
-            <!--</div>-->
-            <div class="navbar-collapse collapse" id="navbar">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="active">
-                        <a aria-expanded="false" role="button" href="layouts.html"> Beranda</a>
-                    </li>
-                    <li class="dropdown">
-                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu 2</a>
-                        <ul role="menu" class="dropdown-menu">
-                            <li><a href="">Menu item</a></li>
-                            <li><a href="">Menu item</a></li>
-                            <li><a href="">Menu item</a></li>
-                            <li><a href="">Menu item</a></li>
+                    <!--</div>-->
+                    <div class="navbar-collapse collapse" id="navbar">
+                        <ul class="nav navbar-nav mr-auto">
+                            <li class="active">
+                                <a aria-expanded="false" role="button" href="layouts.html"> Beranda</a>
+                            </li>
+                            <li class="dropdown">
+                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Profile Desa</a>
+                                <ul role="menu" class="dropdown-menu">
+                                    <li><a href="">Profile Wilayah Desa</a></li>
+                                    <li><a href="">Sejarah Desa</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">Pemerintahan Desa</a>
+                                <ul role="menu" class="dropdown-menu">
+                                    <li><a href="">Visi dan Misi</a></li>
+                                    <li><a href="">Pemerintah Desa</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Lembaga Masyarakat</a>
+                                <ul role="menu" class="dropdown-menu">
+                                    <li><a href="">PKK</a></li>
+                                    <li><a href="">Karang Taruna</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Produk Desa</a>
+                                <ul role="menu" class="dropdown-menu">
+                                    <li><a href="">Menu item</a></li>
+                                    <li><a href="">Menu item</a></li>
+                                    <li><a href="">Menu item</a></li>
+                                    <li><a href="">Menu item</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Data Desa</a>
+                                <ul role="menu" class="dropdown-menu">
+                                    <li><a href="">Data Wilayah Administratif</a></li>
+                                    <li><a href="">Data Pendidikan Dalam KK</a></li>
+                                    <li><a href="">Data Agama</a></li>
+                                    <li><a href="">Data Jenis Kelamin</a></li>
+                                    <li><a href="">Data Warga Negara</a></li>
+                                </ul>
+                            </li>
+
                         </ul>
-                    </li>
-                    <li>
-                        <a role="button" href="#" class="" > Berita Desa</a>
-                    </li>
-                    <li class="dropdown">
-                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Produk Desa</a>
-                        <ul role="menu" class="dropdown-menu">
-                            <li><a href="">Menu item</a></li>
-                            <li><a href="">Menu item</a></li>
-                            <li><a href="">Menu item</a></li>
-                            <li><a href="">Menu item</a></li>
+                        <ul class="nav navbar-top-links navbar-right">
+                            <li>
+                                <a href="login.html">
+                                    <i class="fa fa-sign-out"></i> Log out
+                                </a>
+                            </li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Data Desa</a>
-                        <ul role="menu" class="dropdown-menu">
-                            <li><a href="">Data Penduduk</a></li>
-                            <li><a href="">Penerima Bansos</a></li>
-                            <li><a href="">Jumlah Kepala Keluarga</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-                <ul class="nav navbar-top-links navbar-right">
-                    <li>
-                        <a href="login.html">
-                            <i class="fa fa-sign-out"></i> Log out
-                        </a>
-                    </li>
-                </ul>
+                    </div>
+                </nav>
             </div>
-        </nav>
-        </div>
-        <div class="wrapper wrapper-content">
-            <div class="container">
-    <!-- content website -->
-        @yield('content')
-
-        <!-- end content -->
+            <div class="wrapper wrapper-content">
+                <!-- content website -->
+                @yield('content')
+                <!-- end content -->
             </div>
-        </div>
-        <div class="footer">
-            <div class="float-right">
-                 <strong>Your IP <?= $_SERVER['REMOTE_ADDR'] ?></strong>
-            </div>
-            <div>
-                <strong>Copyright</strong> Desa Gunung Halu &copy; 2014-2018
-            </div>
-        </div>
+            <!-- <div class="footer">
+                <div class="float-right">
+                    <strong>Your IP <?= $_SERVER['REMOTE_ADDR'] ?></strong>
+                </div>
+                <div>
+                    <strong>Copyright</strong> Desa Gunung Halu &copy; 2014-2018
+                </div>
+            </div> -->
 
         </div>
-        </div>
+    </div>
 
 
 
@@ -127,10 +136,15 @@
     <script src="js/demo/peity-demo.js"></script>
     <!-- slick carousel-->
     <script src="js/plugins/slick/slick.min.js"></script>
-
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
     <script>
         $(document).ready(function() {
-             $('.slick_demo_1').slick({
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+            $('.slick_demo_1').slick({
                 dots: true
             });
 
@@ -139,8 +153,7 @@
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 centerMode: true,
-                responsive: [
-                    {
+                responsive: [{
                         breakpoint: 1024,
                         settings: {
                             slidesToShow: 3,
@@ -174,12 +187,45 @@
                 adaptiveHeight: true
             });
 
-            var d1 = [[1262304000000, 6], [1264982400000, 3057], [1267401600000, 20434], [1270080000000, 31982], [1272672000000, 26602], [1275350400000, 27826], [1277942400000, 24302], [1280620800000, 24237], [1283299200000, 21004], [1285891200000, 12144], [1288569600000, 10577], [1291161600000, 10295]];
-            var d2 = [[1262304000000, 5], [1264982400000, 200], [1267401600000, 1605], [1270080000000, 6129], [1272672000000, 11643], [1275350400000, 19055], [1277942400000, 30062], [1280620800000, 39197], [1283299200000, 37000], [1285891200000, 27000], [1288569600000, 21000], [1291161600000, 17000]];
+            var d1 = [
+                [1262304000000, 6],
+                [1264982400000, 3057],
+                [1267401600000, 20434],
+                [1270080000000, 31982],
+                [1272672000000, 26602],
+                [1275350400000, 27826],
+                [1277942400000, 24302],
+                [1280620800000, 24237],
+                [1283299200000, 21004],
+                [1285891200000, 12144],
+                [1288569600000, 10577],
+                [1291161600000, 10295]
+            ];
+            var d2 = [
+                [1262304000000, 5],
+                [1264982400000, 200],
+                [1267401600000, 1605],
+                [1270080000000, 6129],
+                [1272672000000, 11643],
+                [1275350400000, 19055],
+                [1277942400000, 30062],
+                [1280620800000, 39197],
+                [1283299200000, 37000],
+                [1285891200000, 27000],
+                [1288569600000, 21000],
+                [1291161600000, 17000]
+            ];
 
-            var data1 = [
-                { label: "Data 1", data: d1, color: '#17a084'},
-                { label: "Data 2", data: d2, color: '#127e68' }
+            var data1 = [{
+                    label: "Data 1",
+                    data: d1,
+                    color: '#17a084'
+                },
+                {
+                    label: "Data 2",
+                    data: d2,
+                    color: '#127e68'
+                }
             ];
             $.plot($("#flot-chart1"), data1, {
                 xaxis: {
@@ -213,8 +259,7 @@
 
             var lineData = {
                 labels: ["January", "February", "March", "April", "May", "June", "July"],
-                datasets: [
-                    {
+                datasets: [{
                         label: "Example dataset",
                         backgroundColor: "rgba(26,179,148,0.5)",
                         borderColor: "rgba(26,179,148,0.7)",
@@ -239,7 +284,11 @@
 
 
             var ctx = document.getElementById("lineChart").getContext("2d");
-            new Chart(ctx, {type: 'line', data: lineData, options:lineOptions});
+            new Chart(ctx, {
+                type: 'line',
+                data: lineData,
+                options: lineOptions
+            });
 
         });
     </script>
