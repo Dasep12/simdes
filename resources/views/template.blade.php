@@ -15,7 +15,9 @@
     <link href="css/plugins/slick/slick.css" rel="stylesheet">
     <link href="css/plugins/slick/slick-theme.css" rel="stylesheet">
     <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <style>
 
+    </style>
 </head>
 
 <body class="top-navigation">

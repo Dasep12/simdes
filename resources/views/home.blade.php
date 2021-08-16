@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('content')
-<div class="row mb-3">
+<div class="row mb-2">
     <div class="col-lg-12">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -41,19 +41,6 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <!-- <div class="ibox">
-            <div class="ibox-title">
-                <h1>Selamat Datang</h1>
-            </div>
-            <div class="ibox-content">
-                <p>
-                    SID GUNUNG HALU</p>
-                <p>
-                    Desa Gunung Halu merupakan sebuah desa yang terletak di daerah gununghalu , desa gunung halu ini di pimpin oleh kepala desa yang bernama Ahmad Saefullah
-                    Sistem informasi ini akan membantu desa dalam percepatan informasi
-                </p>
-            </div>
-        </div> -->
     </div>
 </div>
 
@@ -66,12 +53,14 @@
             </div>
             <div class="ibox-content">
                 <div class="list-group mb-1">
-                    <?php for ($i = 0; $i < 5; $i++) { ?>
+                    <?php for ($i = 0; $i < 3; $i++) { ?>
                         <img src="lampiran/cover.jpg">
                         <span class="list-group-item " href="#">
-                            <a href="#">11 Juni 2020 11:22:04 | SID Paok Motong Berita Desa</a>
+                            <a href="#">11 Juni 2020 11:22:04 | SID Gunung Halu</a>
                             <a href="">
-                                <h3 class="list-group-item-heading">A wonderful serenity has taken</h3>
+                                <h3 class="list-group-item-heading">
+                                    Pembagian Sembako Paket 1 JPS Gemilang
+                                </h3>
                             </a>
                             <p class="">I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. </p>
                         </span>
@@ -83,6 +72,7 @@
         <div class="row justify-content-center mb-3">
             <button class="btn btn-info btn-lg">Tampilkan Semua Berita</button>
         </div>
+
     </div>
     <!-- end of colom kiri -->
 
@@ -136,8 +126,43 @@
             </div>
         </div>
         <!-- end of coloom voting -->
+
+        <!-- kolom populer -->
+        <!-- <div class="ibox ">
+            <div class="ibox-content"> -->
+        <strong>Berita Populer</strong>
+        <div id="vertical-timeline" class="vertical-container light-timeline no-margins">
+            <?php for ($j = 0; $j < 4; $j++) { ?>
+                <div class="vertical-timeline-block">
+                    <div class="vertical-timeline-icon navy-bg">
+                        <i class="fa fa-book"></i>
+                    </div>
+                    <div class="vertical-timeline-content">
+                        <a href="">
+                            <h5>Pembagian Sembako Paket 1 JPS Gemilang</h5>
+                        </a>
+                        <span class="text-small">
+                            Dibaca 806 Kali | Transparansi Dana Desa
+                        </span>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
     </div>
-    <!-- end of colom kanan -->
+</div>
+<!-- end of kolom populer -->
+</div>
+<!-- end of colom kanan -->
 
 
-    @endsection
+
+<!-- perangakt desa  -->
+<!-- TESTIMONIALS -->
+
+<!-- END OF TESTIMONIALS -->
+<!-- end of perangkat desa -->
+@endsection
+
+<script>
+
+</script>
