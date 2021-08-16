@@ -157,9 +157,9 @@
 
 
 <!-- perangakt desa  -->
-<!-- TESTIMONIALS -->
+<div class="card">
 
-<!-- END OF TESTIMONIALS -->
+</div>
 <!-- end of perangkat desa -->
 @endsection
 
