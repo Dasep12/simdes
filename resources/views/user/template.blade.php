@@ -42,22 +42,22 @@
                             <li class="dropdown">
                                 <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Profile Desa</a>
                                 <ul role="menu" class="dropdown-menu">
-                                    <li><a href="">Profile Wilayah Desa</a></li>
+                                    <li><a href="/profile">Profile Wilayah Desa</a></li>
                                     <li><a href="/sejarah">Sejarah Desa</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">Pemerintahan Desa</a>
                                 <ul role="menu" class="dropdown-menu">
-                                    <li><a href="">Visi dan Misi</a></li>
-                                    <li><a href="">Pemerintah Desa</a></li>
+                                    <li><a href="/visimisi">Visi dan Misi</a></li>
+                                    <li><a href="/pemerintah">Pemerintah Desa</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Lembaga Masyarakat</a>
                                 <ul role="menu" class="dropdown-menu">
-                                    <li><a href="">PKK</a></li>
-                                    <li><a href="">Karang Taruna</a></li>
+                                    <li><a href="/pkk">PKK</a></li>
+                                    <li><a href="/karangtaruna">Karang Taruna</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -72,10 +72,10 @@
                             <li class="dropdown">
                                 <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Data Desa</a>
                                 <ul role="menu" class="dropdown-menu">
-                                    <li><a href="">Data Wilayah Administratif</a></li>
-                                    <li><a href="">Data Pendidikan Dalam KK</a></li>
-                                    <li><a href="">Data Agama</a></li>
-                                    <li><a href="">Data Jenis Kelamin</a></li>
+                                    <li><a href="/wilayah">Data Wilayah Administratif</a></li>
+                                    <li><a href="/pendidikan">Data Pendidikan Dalam KK</a></li>
+                                    <li><a href="/jk">Data Jenis Kelamin</a></li>
+                                    <li><a href="/kelumur">Kelompok Umur</a></li>
                                     <li><a href="">Data Warga Negara</a></li>
                                 </ul>
                             </li>

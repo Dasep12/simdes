@@ -13,7 +13,7 @@
             <div class="ibox-content">
                 <h2>Pembagain Sembako</h2>
                 <div class="form-group text-center">
-                    <img height="300px" width="600px" src="lampiran/cover.jpg" class="img img-responsive">
+                    <img height="300px" width="600px" src="lampiran/cover.jpg" class="img-fluid">
 
                 </div>
                 <p>
