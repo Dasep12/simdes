@@ -37,13 +37,13 @@
                     <div class="navbar-collapse collapse" id="navbar">
                         <ul class="nav navbar-nav mr-auto">
                             <li class="active">
-                                <a aria-expanded="false" role="button" href="layouts.html"> Beranda</a>
+                                <a aria-expanded="false" role="button" href="/"> Beranda</a>
                             </li>
                             <li class="dropdown">
                                 <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Profile Desa</a>
                                 <ul role="menu" class="dropdown-menu">
                                     <li><a href="">Profile Wilayah Desa</a></li>
-                                    <li><a href="">Sejarah Desa</a></li>
+                                    <li><a href="/sejarah">Sejarah Desa</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">

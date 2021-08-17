@@ -17,7 +17,7 @@ class HomeController extends Controller
     //fungsi detail berita
     public function detailBerita()
     {
-        # code...
+
         return view('user.detail_berita');
     }
 
@@ -26,6 +26,7 @@ class HomeController extends Controller
     //fungsi sejarah desa
     public function sejarah()
     {
+        return view('user.sejarah');
     }
 
     public function visimisi()

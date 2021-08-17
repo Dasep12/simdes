@@ -169,7 +169,7 @@
                                 <div class="col-lg-3 col-md-6 col-sm-6">
                                     <div class="our-team">
                                         <div class="pic">
-                                            <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+                                            <img src="lampiran/dasep.png">
                                         </div>
                                         <div class="team-content">
                                             <h3 class="title">Dasep Depiyawan</h3>
