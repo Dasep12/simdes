@@ -9,8 +9,26 @@ class HomeController extends Controller
     //
     public function index()
     {
-        return view('home');
+        return view('user.home');
     }
 
-    
+
+
+    //fungsi detail berita
+    public function detailBerita()
+    {
+        # code...
+        return view('user.detail_berita');
+    }
+
+
+
+    //fungsi sejarah desa
+    public function sejarah()
+    {
+    }
+
+    public function visimisi()
+    {
+    }
 }
