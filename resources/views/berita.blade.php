@@ -152,46 +152,6 @@
 
 
 
-<!-- perangakt desa  -->
-<div class="row mb-5 mt-3">
-    <div class="col-lg-12">
-        <div class="card">
-            <div class="fw-bold text-center card-header">
-                <h2>Perangkat Desa</h2>
-            </div>
-            <div class="card-body">
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row">
-                            <?php for ($e = 0; $e < 4; $e++) { ?>
-                                <!-- profile -->
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="our-team">
-                                        <div class="pic">
-                                            <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
-                                        </div>
-                                        <div class="team-content">
-                                            <h3 class="title">Dasep Depiyawan</h3>
-                                            <span class="post">Kepala Desa</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end of profile -->
-                            <?php } ?>
-                        </div>
-                        <!--.row-->
-                    </div>
-                    <!--.item-->
-
-                </div>
-                <!--.carousel-inner-->
-            </div>
-            <!--.Carousel-->
-        </div>
-    </div>
-</div>
-<!-- end of perangkat desa -->
 
 
 <!-- tentang desa dan sejarah desa -->

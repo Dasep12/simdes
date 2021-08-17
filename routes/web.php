@@ -12,5 +12,8 @@
 */
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BeritaController;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/Berita', [BeritaController::class, 'index']);
+Route::get('/Berita/{id}', [BeritaController::class, 'detail']);
