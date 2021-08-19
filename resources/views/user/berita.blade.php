@@ -81,7 +81,6 @@
         <div class="ibox ">
             <div class="ibox-title">
                 <h5>Kategori</h5>
-
             </div>
             <div class="ibox-content no-padding">
                 <ul class="list-group">
@@ -128,8 +127,6 @@
         <!-- end of coloom voting -->
 
         <!-- kolom populer -->
-        <!-- <div class="ibox ">
-            <div class="ibox-content"> -->
         <strong>Berita Populer</strong>
         <div id="vertical-timeline" class="vertical-container light-timeline no-margins">
             <?php for ($j = 0; $j < 4; $j++) { ?>
@@ -148,8 +145,10 @@
                 </div>
             <?php } ?>
         </div>
+        <!-- end of kolom populer -->
     </div>
 </div>
+<<<<<<< HEAD:resources/views/home.blade.php
 <!-- end of kolom populer -->
 <!-- end of colom kanan -->
 
@@ -157,6 +156,23 @@
 <!-- perangakt desa  -->
 
 <!-- end of perangkat desa -->
+=======
+<!-- end of colom kanan -->
+
+
+
+
+
+<!-- tentang desa dan sejarah desa -->
+<section class="row">
+    <div class="card">
+        <div class="card-body">
+            <h2>Hallo</h2>
+        </div>
+    </div>
+</section>
+<!--  -->
+>>>>>>> 79ec603d9b8631911eec09895654fcc131027f7c:resources/views/user/berita.blade.php
 @endsection
 
 <script>
