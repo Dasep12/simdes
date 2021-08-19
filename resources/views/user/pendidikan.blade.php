@@ -2,14 +2,14 @@
 
 @section('content')
 
-<div class="row mb-3">
+<div class="row">
     <!-- colom kiri  -->
-    <div class="col-lg-8">
+    <div class="col-lg-8 mb-3">
         <div class="card">
             <div class="card-body">
                 <p>Administrator <i class="fa fa-user"></i> </p>
                 <h2 class="">
-                    WILAYAH ADMINISTRATIF
+                    DATA PENDIDIKAN
                 </h2>
                 <h2 class='text-title mt0'><strong>Demografi Berdasar Pendidikan Dalam KK</strong></h2>
                 <div class='mt20'>

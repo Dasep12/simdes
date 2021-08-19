@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="row">
+<div class="row  mb-5">
     <!-- colom kiri  -->
-    <div class="col-lg-8">
+    <div class="col-lg-8 mb-4">
         <div class="card">
             <div class="card-body">
                 <h2>Visi Misi Desa GunungHalu</h2>

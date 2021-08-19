@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="row mb-3">
+<div class="row  mb-5">
     <!-- colom kiri  -->
-    <div class="col-lg-8">
+    <div class="col-lg-8  mb-4">
         <div class="card">
             <div class="card-body">
                 <p>Administrator <i class="fa fa-user"></i> </p>
@@ -58,155 +58,158 @@
                 <p align="center"><strong>MASA JABATAN 2017 s/d 2023</strong></p>
                 <p align="center"><strong>DESA SEKARTAJI KECAMATAN NUSA PENIDA KABUPATEN KLUNGKUNG</strong></p>
                 <p align="center">Surat Keputusan Kepala Desa Sekartaji Nomor : 12 tanggal 3 Bulan Juli Tahun 2017 tentang Penetapan Pengurus Karang Taruna&nbsp;&nbsp;</p>
-                <table class="table" style="margin-left: auto; margin-right: auto;" border="1" width="494" cellspacing="10" cellpadding="10px">
-                    <tbody>
-                        <tr>
-                            <td style="text-align: center;" width="43"><strong>NO</strong></td>
-                            <td style="text-align: center;" width="206"><strong>NAMA</strong></td>
-                            <td style="text-align: center;" width="125"><strong>JABATAN</strong></td>
-                            <td style="text-align: center;" width="120"><strong>ALAMAT</strong></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">&nbsp;1</td>
-                            <td>&nbsp;I Made Nova Wirawan</td>
-                            <td>&nbsp;Ketua</td>
-                            <td>&nbsp;Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">&nbsp;2</td>
-                            <td>&nbsp;I Wayan Kasta Wijaya</td>
-                            <td>&nbsp;Wakil Ketua</td>
-                            <td>&nbsp;Br. Dinas Sedehing</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">3</td>
-                            <td>I Gede Agus Suastawan</td>
-                            <td>Sekretaris I</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">4</td>
-                            <td>I Wayan Suardana</td>
-                            <td>Sekretaris II</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">5</td>
-                            <td>I Wayan Ugi Sugianta</td>
-                            <td>Bendahara I</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">6</td>
-                            <td>Ni Putu Sintawati</td>
-                            <td>Bendahara II</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">7</td>
-                            <td>Ni Luh Mira Yustikawati</td>
-                            <td>Sie Pendidikan</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">8</td>
-                            <td>I Putu Eka Sumadi</td>
-                            <td>Anggota</td>
-                            <td>Br. Dinas Sedehing</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">9</td>
-                            <td>I Putu Karya Arsawan</td>
-                            <td>Sie Pengabdian</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">10</td>
-                            <td>I Made Puji</td>
-                            <td>Anggota</td>
-                            <td>Br. Dinas Sedehing</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">11</td>
-                            <td>I Wayan Jiwa</td>
-                            <td>Anggota</td>
-                            <td>Br. Dinas Ramuan</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">12</td>
-                            <td>I Ketut Ikang Suadnyana</td>
-                            <td>Sie Lingkungan Hidup</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">13</td>
-                            <td>I Kadek Rizal Rahmadi</td>
-                            <td>Anggota</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">14</td>
-                            <td>I Gede Ari Mudiarta</td>
-                            <td>Sie Olahraga</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">15</td>
-                            <td>I Gede Bagus Juliantara</td>
-                            <td>Anggota</td>
-                            <td>Br. Dinas Ramuan</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">16</td>
-                            <td>I Gede Karta</td>
-                            <td>Sie Kerohanian</td>
-                            <td>Br. Dinas Sedehing</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">17</td>
-                            <td>I Made Kertawijaya</td>
-                            <td>Anggota</td>
-                            <td>Br. Dinas Bungkil</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">18</td>
-                            <td>I Gede Agus Kesuma Wardana</td>
-                            <td>Sie Usaha</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">19</td>
-                            <td>I Kadek Sudarta</td>
-                            <td>Anggota</td>
-                            <td>Br. Dinas Tabuanan</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">20</td>
-                            <td>Ni Luh Ayu Marditawati</td>
-                            <td>Sie Kemasyarakatan</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">21</td>
-                            <td>I Made Jastra</td>
-                            <td>Anggota</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">22</td>
-                            <td>I Komang Suartawan</td>
-                            <td>Sie Ling. Hidup</td>
-                            <td>Br. Dinas Sekartaji</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">23</td>
-                            <td>I Ketut Rejasa</td>
-                            <td>Anggota</td>
-                            <td>Br. Dinas Dlundungan</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>&nbsp;</p>
+                <div class="table-responsive">
+
+                    <table class="table" style="margin-left: auto; margin-right: auto;" border="1" width="494" cellspacing="10" cellpadding="10px">
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center;" width="43"><strong>NO</strong></td>
+                                <td style="text-align: center;" width="206"><strong>NAMA</strong></td>
+                                <td style="text-align: center;" width="125"><strong>JABATAN</strong></td>
+                                <td style="text-align: center;" width="120"><strong>ALAMAT</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">&nbsp;1</td>
+                                <td>&nbsp;I Made Nova Wirawan</td>
+                                <td>&nbsp;Ketua</td>
+                                <td>&nbsp;Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">&nbsp;2</td>
+                                <td>&nbsp;I Wayan Kasta Wijaya</td>
+                                <td>&nbsp;Wakil Ketua</td>
+                                <td>&nbsp;Br. Dinas Sedehing</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">3</td>
+                                <td>I Gede Agus Suastawan</td>
+                                <td>Sekretaris I</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">4</td>
+                                <td>I Wayan Suardana</td>
+                                <td>Sekretaris II</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">5</td>
+                                <td>I Wayan Ugi Sugianta</td>
+                                <td>Bendahara I</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">6</td>
+                                <td>Ni Putu Sintawati</td>
+                                <td>Bendahara II</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">7</td>
+                                <td>Ni Luh Mira Yustikawati</td>
+                                <td>Sie Pendidikan</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">8</td>
+                                <td>I Putu Eka Sumadi</td>
+                                <td>Anggota</td>
+                                <td>Br. Dinas Sedehing</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">9</td>
+                                <td>I Putu Karya Arsawan</td>
+                                <td>Sie Pengabdian</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">10</td>
+                                <td>I Made Puji</td>
+                                <td>Anggota</td>
+                                <td>Br. Dinas Sedehing</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">11</td>
+                                <td>I Wayan Jiwa</td>
+                                <td>Anggota</td>
+                                <td>Br. Dinas Ramuan</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">12</td>
+                                <td>I Ketut Ikang Suadnyana</td>
+                                <td>Sie Lingkungan Hidup</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">13</td>
+                                <td>I Kadek Rizal Rahmadi</td>
+                                <td>Anggota</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">14</td>
+                                <td>I Gede Ari Mudiarta</td>
+                                <td>Sie Olahraga</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">15</td>
+                                <td>I Gede Bagus Juliantara</td>
+                                <td>Anggota</td>
+                                <td>Br. Dinas Ramuan</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">16</td>
+                                <td>I Gede Karta</td>
+                                <td>Sie Kerohanian</td>
+                                <td>Br. Dinas Sedehing</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">17</td>
+                                <td>I Made Kertawijaya</td>
+                                <td>Anggota</td>
+                                <td>Br. Dinas Bungkil</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">18</td>
+                                <td>I Gede Agus Kesuma Wardana</td>
+                                <td>Sie Usaha</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">19</td>
+                                <td>I Kadek Sudarta</td>
+                                <td>Anggota</td>
+                                <td>Br. Dinas Tabuanan</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">20</td>
+                                <td>Ni Luh Ayu Marditawati</td>
+                                <td>Sie Kemasyarakatan</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">21</td>
+                                <td>I Made Jastra</td>
+                                <td>Anggota</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">22</td>
+                                <td>I Komang Suartawan</td>
+                                <td>Sie Ling. Hidup</td>
+                                <td>Br. Dinas Sekartaji</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">23</td>
+                                <td>I Ketut Rejasa</td>
+                                <td>Anggota</td>
+                                <td>Br. Dinas Dlundungan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
 
             </div>
         </div>

@@ -2,12 +2,15 @@
 
 @section('content')
 
-<div class="row mb-3">
+<div class="row">
     <!-- colom kiri  -->
-    <div class="col-lg-8">
+    <div class="col-lg-8  mb-4">
         <div class="card">
             <div class="card-body">
                 <p>Administrator <i class="fa fa-user"></i> </p>
+                <h2 class="">
+                    DATA UMUR
+                </h2>
                 <h2 class='text-title mt0'><strong>Demografi Berdasar Umur</strong></h2>
                 <div class='mt20'>
                     <h3 class='text-title mt0'><strong>Tabel Data</strong></h3>

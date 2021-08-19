@@ -9,7 +9,7 @@
             <div class="card-body">
                 <p>Administrator <i class="fa fa-user"></i> </p>
                 <h2 class="">
-                    WILAYAH ADMINISTRATIF
+                    DATA JENIS KELAMIN
                 </h2>
                 <h2 class='text-title mt0'><strong>Demografi Berdasar Jenis Kelamin</strong></h2>
                 <div class='mt20'>

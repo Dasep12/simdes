@@ -2,15 +2,15 @@
 
 @section('content')
 
-<div class="row">
+<div class="row mb-5">
     <!-- colom kiri  -->
-    <div class="col-lg-8">
+    <div class="col-lg-8  mb-4">
         <div class="card">
             <div class="card-body">
                 <h2>Sejarah Desa GunungHalu</h2>
                 <p>Administrator <i class="fa fa-user"></i> </p>
                 <div class="form-group text-center">
-                    <img height="300px" width="600px" src="img/kecamatan-gunung-halu.jpg" class="img img-responsive">
+                    <img height="300px" width="600px" src="img/kecamatan-gunung-halu.jpg" class="img-fluid">
 
                 </div>
                 <p>

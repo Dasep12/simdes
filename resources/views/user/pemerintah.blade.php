@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="row mb-3">
+<div class="row  mb-5">
     <!-- colom kiri  -->
-    <div class="col-lg-8">
+    <div class="col-lg-8  mb-4">
         <div class="card">
             <div class="card-body">
                 <p>Administrator <i class="fa fa-user"></i> </p>

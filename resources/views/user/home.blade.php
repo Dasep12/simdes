@@ -193,16 +193,6 @@
 </div>
 <!-- end of perangkat desa -->
 
-
-<!-- tentang desa dan sejarah desa -->
-<section class="row">
-    <div class="card">
-        <div class="card-body">
-            <h2>Hallo</h2>
-        </div>
-    </div>
-</section>
-<!--  -->
 @endsection
 
 <script>

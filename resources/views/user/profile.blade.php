@@ -2,14 +2,14 @@
 
 @section('content')
 
-<div class="row mb-3">
+<div class="row mb-5">
     <!-- colom kiri  -->
     <div class="col-lg-8">
         <div class="card">
             <div class="card-body">
                 <p>Administrator <i class="fa fa-user"></i> </p>
                 <h2 class="">
-                    PEMERINTAH DESA
+                    PROFILE DESA GUNUNG HALU
                 </h2>
                 <div class="form-group text-center">
                     <img height="300px" width="600px" src="lampiran/geografis.png" class="img-fluid">
@@ -18,7 +18,7 @@
                     Berikut ini Profil Wilayah Desa Gunung Halu
                 </h2>
                 <p>1. Luas Wilayah</p>
-                <table>
+                <table class="table">
                     <tbody>
                         <tr>
                             <td width="293">
@@ -97,70 +97,74 @@
                 <p>2. Batas-batas</p>
                 <ul>
                     <li>
-                        <table width="640">
-                            <tbody>
-                                <tr>
-                                    <td colspan="3" width="576">
-                                        <p><strong>&nbsp;Batas </strong></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td width="217">
-                                        <p><strong>Batas</strong></p>
-                                    </td>
-                                    <td width="161">
-                                        <p><strong>Desa/Kelurahan</strong></p>
-                                    </td>
-                                    <td width="199">
-                                        <p><strong>Kecamatan</strong></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td width="217">
-                                        <p>Sebelah utara</p>
-                                    </td>
-                                    <td width="161">
-                                        <p>Desa Tanglad</p>
-                                    </td>
-                                    <td width="199">
-                                        <p>Nusa Penida</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td width="217">
-                                        <p>Sebelah selatan</p>
-                                    </td>
-                                    <td width="161">
-                                        <p>Samudra Indonesia</p>
-                                    </td>
-                                    <td width="199">
-                                        <p>-</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td width="217">
-                                        <p>Sebelah timur</p>
-                                    </td>
-                                    <td width="161">
-                                        <p>Desa Tanglad</p>
-                                    </td>
-                                    <td width="199">
-                                        <p>Nusa Penida</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td width="217">
-                                        <p>Sebelah barat</p>
-                                    </td>
-                                    <td width="161">
-                                        <p>Desa Batukandik</p>
-                                    </td>
-                                    <td width="199">
-                                        <p>Nusa Penida</p>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+
+                            <table width="640">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3" width="576">
+                                            <p><strong>&nbsp;Batas </strong></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="217">
+                                            <p><strong>Batas</strong></p>
+                                        </td>
+                                        <td width="161">
+                                            <p><strong>Desa/Kelurahan</strong></p>
+                                        </td>
+                                        <td width="199">
+                                            <p><strong>Kecamatan</strong></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="217">
+                                            <p>Sebelah utara</p>
+                                        </td>
+                                        <td width="161">
+                                            <p>Desa Tanglad</p>
+                                        </td>
+                                        <td width="199">
+                                            <p>Nusa Penida</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="217">
+                                            <p>Sebelah selatan</p>
+                                        </td>
+                                        <td width="161">
+                                            <p>Samudra Indonesia</p>
+                                        </td>
+                                        <td width="199">
+                                            <p>-</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="217">
+                                            <p>Sebelah timur</p>
+                                        </td>
+                                        <td width="161">
+                                            <p>Desa Tanglad</p>
+                                        </td>
+                                        <td width="199">
+                                            <p>Nusa Penida</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="217">
+                                            <p>Sebelah barat</p>
+                                        </td>
+                                        <td width="161">
+                                            <p>Desa Batukandik</p>
+                                        </td>
+                                        <td width="199">
+                                            <p>Nusa Penida</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </li>
                 </ul>
 
@@ -171,7 +175,7 @@
     <!-- end of colom kiri -->
 
     <!-- colom kanan -->
-    <div class="col-lg-4">
+    <div class="col-lg-4 ">
         <div class="ibox ">
             <div class="ibox-title">
                 <h5>Kategori</h5>
