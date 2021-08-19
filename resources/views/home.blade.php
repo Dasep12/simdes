@@ -44,7 +44,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row mb-3">
     <!-- colom kiri  -->
     <div class="col-lg-8">
         <div class="ibox ">

@@ -96,14 +96,14 @@
                 @yield('content')
                 <!-- end content -->
             </div>
-            <!-- <div class="footer">
+            <div class="footer">
                 <div class="float-right">
                     <strong>Your IP <?= $_SERVER['REMOTE_ADDR'] ?></strong>
                 </div>
                 <div>
                     <strong>Copyright</strong> Desa Gunung Halu &copy; 2014-2018
                 </div>
-            </div> -->
+            </div>
 
         </div>
     </div>
