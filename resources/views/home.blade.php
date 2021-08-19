@@ -67,10 +67,10 @@
                         <hr>
                     <?php  } ?>
                 </div>
+                <div class="row justify-content-center mb-3">
+                    <button class="btn btn-info btn-lg">Tampilkan Semua Berita</button>
+                </div>
             </div>
-        </div>
-        <div class="row justify-content-center mb-3">
-            <button class="btn btn-info btn-lg">Tampilkan Semua Berita</button>
         </div>
 
     </div>
@@ -151,15 +151,11 @@
     </div>
 </div>
 <!-- end of kolom populer -->
-</div>
 <!-- end of colom kanan -->
 
 
-
 <!-- perangakt desa  -->
-<div class="card">
 
-</div>
 <!-- end of perangkat desa -->
 @endsection
 
