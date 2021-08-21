@@ -12,7 +12,10 @@
 */
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\admin\Profile;
+use Illuminate\Support\Facades\Route;
 
+//Route client or user
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/detail', [HomeController::class, 'detailBerita']);
 Route::get('/profile', [HomeController::class, 'profile']);
@@ -25,3 +28,10 @@ Route::get('/wilayah', [HomeController::class, 'wilayah']);
 Route::get('/pendidikan', [HomeController::class, 'pendidikan']);
 Route::get('/jk', [HomeController::class, 'jk']);
 Route::get('/kelumur', [HomeController::class, 'kelumur']);
+// 
+
+
+//Routing admin 
+Route::get('/admin/profile', [Profile::class, 'profile']);
+Route::get('/admin/editprofile', [Profile::class, 'form_edit_profile']);
+// 
