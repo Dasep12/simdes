@@ -230,7 +230,12 @@
     <script>
         $(document).ready(function() {
 
-            $('.summernote').summernote();
+            $('.summernote').summernote({
+                height: 400,
+                codemirror: { // codemirror options
+                    theme: 'monokai'
+                }
+            });
 
             $('.dataTables-example').DataTable({
                 pageLength: 10,

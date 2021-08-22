@@ -32,6 +32,7 @@ Route::get('/kelumur', [HomeController::class, 'kelumur']);
 
 
 //Routing admin 
-Route::get('/admin/profile', [Profile::class, 'profile']);
-Route::get('/admin/editprofile', [Profile::class, 'form_edit_profile']);
+Route::get('/admin/profile', [Profile::class, 'profile'])->name('daftarPro');
+Route::get('/admin/editprofile/{id}', [Profile::class, 'form_edit_profile']);
+Route::post('/admin/updateprofile', [Profile::class, 'updateProfile']);
 // 

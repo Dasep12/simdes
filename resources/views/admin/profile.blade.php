@@ -44,14 +44,17 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $no = 1; ?>
+                                @foreach($data as $p)
                                 <tr class="gradeX">
-                                    <td>1</td>
-                                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora nostrum ipsum perspiciatis itaque assumenda dolore odit. Suscipit nisi possimus laudantium architecto natus sint error, iste cupiditate rerum, aperiam nobis pariatur!</td>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= 'Profile Desa' ?></td>
                                     <td>
-                                        <a href="/admin/editprofile" class="btn btn-info btn-sm btn-xs">edit</a>
-                                        <a href="/profile" class="mb-2 btn btn-success btn-sm btn-xs">detail</a>
+                                        <a href="/admin/editprofile/{{ $p->id }}" class="btn btn-info btn-sm btn-xs">edit</a>
+                                        <a target="_blank" href="/profile" class="btn btn-success btn-sm btn-xs">lihat</a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

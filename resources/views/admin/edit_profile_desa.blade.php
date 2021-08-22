@@ -23,26 +23,20 @@
 <div class="wrapper wrapper-content">
     <div class="row">
         <div class="col-lg-12">
-            <div class="ibox ">
-                <div class="ibox-title">
-                    <h5>Wyswig Summernote Editor</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#" class="dropdown-item">Config option 1</a>
-                            </li>
-                            <li><a href="#" class="dropdown-item">Config option 2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
+            <form action="/admin/updateprofile" method="post" enctype="multipart/form-data">
+                @csrf
+                <label>Judul</label>
+                <input type="text" class="form-control" name="title" value="{{ $data->title }}">
+                <div class="ibox ">
+                    <hr>
+                    <label>Content</label>
+                    <input type="hidden" name="id" value="{{ $data->id }}">
+                    <div class="ibox-content no-padding">
+                        <textarea name="profile" rows="40" class="summernote">
+                        {{ $data->profile }}
+                        </textarea>
                     </div>
+<<<<<<< HEAD
                 </div>
                 <div class="ibox-content no-padding">
                     <form method="post" action="" enctype="multipart/form-data">
@@ -63,5 +57,12 @@
                 </div>
                 </form>
             </div>
+=======
+                    <div class="form-group mt-2">
+                        <button type="submit" class="btn btn-info">Simpan Data</button>
+                    </div>
+            </form>
+>>>>>>> author
         </div>
-        @endsection
+    </div>
+    @endsection

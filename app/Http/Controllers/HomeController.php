@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\M_profile;
+
 
 class HomeController extends Controller
 {
@@ -24,7 +26,11 @@ class HomeController extends Controller
     //halaman profile desa
     public function profile()
     {
-        return view('user.profile');
+        $id = 1;
+        $data = [
+            'data'  => M_profile::find($id)
+        ];
+        return view('user.profile', $data);
     }
 
     //fungsi sejarah desa
