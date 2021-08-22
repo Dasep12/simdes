@@ -23,43 +23,23 @@
 <div class="wrapper wrapper-content">
     <div class="row">
         <div class="col-lg-12">
-            <div class="ibox ">
-                <div class="ibox-title">
-                    <h5>Wyswig Summernote Editor</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#" class="dropdown-item">Config option 1</a>
-                            </li>
-                            <li><a href="#" class="dropdown-item">Config option 2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
+            <form action="/admin/updateprofile" method="post" enctype="multipart/form-data">
+                @csrf
+                <label>Judul</label>
+                <input type="text" class="form-control" name="title" value="{{ $data->title }}">
+                <div class="ibox ">
+                    <hr>
+                    <label>Content</label>
+                    <input type="hidden" name="id" value="{{ $data->id }}">
+                    <div class="ibox-content no-padding">
+                        <textarea name="profile" rows="40" class="summernote">
+                        {{ $data->profile }}
+                        </textarea>
                     </div>
-                </div>
-                <div class="ibox-content no-padding">
-
-                    <div class="summernote">
-                        <h3>Lorem Ipsum is simply</h3>
-                        dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                        <br />
-                        <br />
-                        <ul>
-                            <li>Remaining essentially unchanged</li>
-                            <li>Make a type specimen book</li>
-                            <li>Unknown printer</li>
-                        </ul>
+                    <div class="form-group mt-2">
+                        <button type="submit" class="btn btn-info">Simpan Data</button>
                     </div>
-                </div>
-            </div>
+            </form>
         </div>
-        @endsection
+    </div>
+    @endsection
