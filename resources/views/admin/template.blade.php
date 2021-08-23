@@ -14,7 +14,7 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
-    <link href="/css/plugins/summernote/summernote-bs4.css" rel="stylesheet">
+
 </head>
 
 <body class="">
@@ -231,17 +231,14 @@
     <!-- datatables -->
     <script src="/js/plugins/dataTables/datatables.min.js"></script>
     <script src="/js/plugins/dataTables/dataTables.bootstrap4.min.js"></script>
-    <!-- SUMMERNOTE -->
-    <script src="/js/plugins/summernote/summernote-bs4.js"></script>
+    <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
     <!-- Page-Level Scripts -->
     <script>
         $(document).ready(function() {
 
-            $('.summernote').summernote({
-                height: 400,
-                codemirror: { // codemirror options
-                    theme: 'monokai'
-                }
+            CKEDITOR.replace('profile', {
+                filebrowserUploadUrl: "{{route('admin.update', ['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod: 'form'
             });
 
             $('.dataTables-example').DataTable({

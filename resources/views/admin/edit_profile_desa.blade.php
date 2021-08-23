@@ -32,9 +32,7 @@
                     <label>Content</label>
                     <input type="hidden" name="id" value="{{ $data->id }}">
                     <div class="ibox-content no-padding">
-                        <textarea name="profile" rows="40" class="summernote">
-                        {{ $data->profile }}
-                        </textarea>
+                        <textarea name="profile"></textarea>
                     </div>
 
                 </div>
@@ -42,4 +40,8 @@
         </div>
     </div>
 </div>
+
 @endsection
+<script type="text/javascript">
+
+</script>

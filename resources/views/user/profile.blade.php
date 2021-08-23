@@ -11,7 +11,9 @@
                 <h2 class="">
                     {{ $data->title }}
                 </h2>
-                {!! $data->profile !!}
+                <div class="table-responsive">
+                    {!! $data->profile !!}
+                </div>
             </div>
         </div>
 

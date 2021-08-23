@@ -23,6 +23,11 @@
 <div class="wrapper wrapper-content">
     <div class="row">
         <div class="col-lg-12">
+            @if(Session('info'))
+            <div class="alert alert-danger">
+                <p>{{ Session('info') }}}</p>
+            </div>
+            @endif
             <div class="ibox ">
                 <div class="ibox-title">
                     <h5>Profile Desa</h5>

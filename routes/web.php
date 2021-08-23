@@ -35,4 +35,5 @@ Route::get('/kelumur', [HomeController::class, 'kelumur']);
 Route::get('/admin/profile', [Profile::class, 'profile'])->name('daftarPro');
 Route::get('/admin/editprofile/{id}', [Profile::class, 'form_edit_profile']);
 Route::post('/admin/updateprofile', [Profile::class, 'updateProfile']);
+Route::post('/admin/uploadImage', [Profile::class, 'uploadImage'])->name('admin.update');
 // 
