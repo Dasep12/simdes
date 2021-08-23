@@ -36,6 +36,10 @@
                         {{ $data->profile }}
                         </textarea>
                     </div>
+
                 </div>
+                <button class="btn btn-danger">Simpan</button>
         </div>
-        @endsection
+    </div>
+</div>
+@endsection

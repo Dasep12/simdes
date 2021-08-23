@@ -11,7 +11,7 @@
                 <h2 class="">
                     {{ $data->title }}
                 </h2>
-                {{ $data->profile }}
+                {!! $data->profile !!}
             </div>
         </div>
 

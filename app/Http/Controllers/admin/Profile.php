@@ -32,21 +32,19 @@ class Profile extends Controller
 
     public function updateProfile(Request $request)
     {
-        // $this->validate($request, [
-        //     'profile' => 'required',
-        // ]);
+        $this->validate($request, [
+            'profile' => 'required',
+        ]);
 
         $content = $request->profile;
         $dom = new \DomDocument();
         $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $imageFile = $dom->getElementsByTagName('imageFile');
+        $imageFile = $dom->getElementsByTagName('img');
 
         foreach ($imageFile as $item => $image) {
-            $data = $img->getAttribute('src');
-
+            $data = $image->getAttribute('src');
             list($type, $data) = explode(';', $data);
             list(, $data)      = explode(',', $data);
-
             $imgeData = base64_decode($data);
             $image_name = "/upload/" . time() . $item . '.png';
             $path = public_path() . $image_name;

@@ -50,6 +50,13 @@
 
                     </li>
                     <li class="">
+                        <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Berita</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li class="{{ (request()->is('admin/create_berita')) ? 'active' : '' }}"><a href="index.html">Buat</a></li>
+                            <li class="{{ (request()->is('admin/daftar_berita')) ? 'active' : '' }}"><a href="dashboard_2.html">Daftar Berita</a></li>
+                        </ul>
+                    </li>
+                    <li class="">
                         <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Profile Desa</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li class="{{ (request()->is('admin/profile')) ? 'active' : '' }}"><a href="index.html">Profile Desa</a></li>
