@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\M_visimisi;
+use App\Models\M_pemerintah;
 use Illuminate\Http\Request;
 use Session;
 use Validator;
@@ -61,5 +62,15 @@ class Pemerintah extends Controller
             Session::flash('info', 'Berhasil update');
             return redirect()->route('dataVisiMisi');
         }
+    }
+
+    //
+    public function pemerintah()
+    {
+        $data = [
+            'title'   => 'Pemerintahan',
+            'data'    => M_pemerintah::all()
+        ];
+        return view('admin.pemerintah', $data);
     }
 }

@@ -43,4 +43,5 @@ Route::post('/admin/updateSejarah', [Profile::class, 'updateSejarah']);
 Route::get('/admin/visimisi', [Pemerintah::class, 'visimisi'])->name('dataVisiMisi');
 Route::get('/admin/editVisiMisi', [Pemerintah::class, 'editVisimisi']);
 Route::post('/admin/updateVisi', [Pemerintah::class, 'updateVisMisi']);
+Route::get('/admin/pemerintah', [Pemerintah::class, 'pemerintah']);
 // 
