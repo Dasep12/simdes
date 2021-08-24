@@ -59,8 +59,8 @@
                     <li class="">
                         <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Profile Desa</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="{{ (request()->is('admin/profile')) ? 'active' : '' }}"><a href="index.html">Profile Desa</a></li>
-                            <li class="{{ (request()->is('admin/sejarah')) ? 'active' : '' }}"><a href="dashboard_2.html">Sejarah Desa</a></li>
+                            <li class="{{ (request()->is('admin/profile')) ? 'active' : '' }}"><a href="/admin/profile">Profile Desa</a></li>
+                            <li class="{{ (request()->is('admin/sejarah')) ? 'active' : '' }}"><a href="/admin/sejarah">Sejarah Desa</a></li>
                         </ul>
                     </li>
                     <li>
@@ -237,6 +237,11 @@
         $(document).ready(function() {
 
             CKEDITOR.replace('profile', {
+                filebrowserUploadUrl: "{{route('admin.update', ['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod: 'form'
+            });
+
+            CKEDITOR.replace('sejarah', {
                 filebrowserUploadUrl: "{{route('admin.update', ['_token' => csrf_token() ])}}",
                 filebrowserUploadMethod: 'form'
             });

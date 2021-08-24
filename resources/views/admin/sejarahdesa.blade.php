@@ -9,7 +9,7 @@
                 <a href="/profile">This is</a>
             </li>
             <li class="breadcrumb-item active">
-                <strong>Profile Desa</strong>
+                <strong>Sejarah Desa</strong>
             </li>
         </ol>
     </div>
@@ -30,7 +30,7 @@
             @endif
             <div class="ibox ">
                 <div class="ibox-title">
-                    <h5>Profile Desa</h5>
+                    <h5>Sejarah Desa</h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -44,19 +44,21 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Profile</th>
+                                    <th>Sejarah</th>
+                                    <th>Author</th>
                                     <th>Opsi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $no = 1; ?>
-                                @foreach($data as $p)
+                                @foreach($sejarah as $p)
                                 <tr class="gradeX">
                                     <td><?= $no++ ?></td>
-                                    <td><?= 'Profile Desa' ?></td>
+                                    <td><?= 'Sejarah Desa' ?></td>
+                                    <td><?= 'Administrator' ?></td>
                                     <td>
-                                        <a href="/admin/editprofile/{{ $p->id }}" class="btn btn-info btn-sm btn-xs">edit</a>
-                                        <a target="_blank" href="/profile" class="btn btn-success btn-sm btn-xs">lihat</a>
+                                        <a href="/admin/editSejarah/{{ $p->id }}" class="btn btn-info btn-sm btn-xs">edit</a>
+                                        <a target="_blank" href="/sejarah" class="btn btn-success btn-sm btn-xs">lihat</a>
                                     </td>
                                 </tr>
                                 @endforeach

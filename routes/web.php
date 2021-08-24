@@ -37,4 +37,6 @@ Route::get('/admin/editprofile/{id}', [Profile::class, 'form_edit_profile']);
 Route::post('/admin/updateprofile', [Profile::class, 'updateProfile']);
 Route::post('/admin/uploadImage', [Profile::class, 'uploadImage'])->name('admin.update');
 Route::get('/admin/sejarah', [Profile::class, 'sejarah']);
+Route::get('/admin/editSejarah/{id}', [Profile::class, 'form_edit_sejarah']);
+Route::post('/admin/updateSejarah', [Profile::class, 'updateSejarah']);
 // 

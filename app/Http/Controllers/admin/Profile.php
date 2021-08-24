@@ -79,4 +79,34 @@ class Profile extends Controller
         ];
         return view('admin.sejarahdesa', $data);
     }
+
+    public function form_edit_sejarah($id)
+    {
+        $data  = [
+            'title'  => 'Sejarah Desa',
+            'data'   => M_sejarah::find($id)
+        ];
+        return view('admin.edit_sejarah_desa', $data);
+    }
+
+    public function updateSejarah(Request $request)
+    {
+        $rules  = [
+            'title'      => 'required',
+            'sejarah'    => 'required'
+        ];
+
+        $messages = [
+            'title.required'  => 'title harus di isi ',
+            'sejarah'         => 'isi content harus di isi '
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            Session::flash('errors', ['' => ""]);
+            return redirect()->back()->withErrors($validator)->withInput($request->all());
+        } else {
+            $data = M_sejarah::find($request->id);
+        }
+    }
 }
