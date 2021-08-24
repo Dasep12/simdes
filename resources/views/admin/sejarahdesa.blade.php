@@ -24,7 +24,7 @@
     <div class="row">
         <div class="col-lg-12">
             @if(Session('info'))
-            <div class="alert alert-danger">
+            <div class="alert alert-info">
                 <p>{{ Session('info') }}}</p>
             </div>
             @endif

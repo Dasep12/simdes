@@ -22,8 +22,16 @@
 
 <div class="wrapper wrapper-content">
     <div class="row">
-
         <div class="col-lg-12">
+            @if(Session('errors'))
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $p)
+                    <li>{{ $p }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <form action="/admin/updateSejarah" method="post" enctype="multipart/form-data">
                 @csrf
                 <label>Judul</label>

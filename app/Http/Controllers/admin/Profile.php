@@ -93,12 +93,13 @@ class Profile extends Controller
     {
         $rules  = [
             'title'      => 'required',
-            'sejarah'    => 'required'
+            'sejarah'    => 'required|min:100'
         ];
 
         $messages = [
-            'title.required'  => 'title harus di isi ',
-            'sejarah'         => 'isi content harus di isi '
+            'title.required'        => 'title harus di isi ',
+            'sejarah.required'      => 'isi content harus di isi ',
+            'sejarah.min'           => 'isi content harus lebih 100 karakter'
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -107,6 +108,12 @@ class Profile extends Controller
             return redirect()->back()->withErrors($validator)->withInput($request->all());
         } else {
             $data = M_sejarah::find($request->id);
+            $data->title  = $request->title;
+            $data->sejarah = $request->sejarah;
+            $data->author  = "Administrator";
+            $data->update();
+            Session::flash('info', 'Data Berhasil tersimpan');
+            return redirect()->route('daftar_Sejarah');
         }
     }
 }

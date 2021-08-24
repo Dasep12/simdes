@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\M_profile;
-
+use App\Models\M_sejarah;
 
 class HomeController extends Controller
 {
@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $id = 1;
         $data = [
-            'data'  => M_profile::find($id)
+            'data'  => M_profile::first()
         ];
         return view('user.profile', $data);
     }
@@ -36,7 +36,10 @@ class HomeController extends Controller
     //fungsi sejarah desa
     public function sejarah()
     {
-        return view('user.sejarah');
+        $data = [
+            'data'  => M_sejarah::first()
+        ];
+        return view('user.sejarah', $data);
     }
     //end 
 

@@ -3,18 +3,15 @@
 @section('content')
 
 <div class="row mb-5">
+
     <!-- colom kiri  -->
     <div class="col-lg-8  mb-4">
         <div class="card">
             <div class="card-body">
-                <h2>Sejarah Desa GunungHalu</h2>
+                <h2>{{ $data->title }}</h2>
                 <p>Administrator <i class="fa fa-user"></i> </p>
-                <div class="form-group text-center">
-                    <img height="300px" width="600px" src="img/kecamatan-gunung-halu.jpg" class="img-fluid">
-
-                </div>
                 <p>
-                    Gununghalu merupakan sebuah desa yang terletak dalam (daerah) kecamatan Gununghalu, Kabupaten Bandung Barat, Provinsi Jawa Barat, Indonesia.
+                    {!! $data->sejarah !!}
                 </p>
             </div>
         </div>
