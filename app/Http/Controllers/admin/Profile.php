@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\M_profile;
+use App\Models\M_sejarah;
 use Session;
 use Validator;
 
@@ -36,28 +37,8 @@ class Profile extends Controller
             'profile' => 'required',
         ]);
 
-        $content = $request->profile;
-        $dom = new \DomDocument();
-        $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $imageFile = $dom->getElementsByTagName('img');
-
-        foreach ($imageFile as $item => $image) {
-            $data = $image->getAttribute('src');
-            list($type, $data) = explode(';', $data);
-            list(, $data)      = explode(',', $data);
-            $imgeData = base64_decode($data);
-            $image_name = "/upload/" . time() . $item . '.png';
-            $path = public_path() . $image_name;
-            file_put_contents($path, $imgeData);
-
-            $image->removeAttribute('src');
-            $image->setAttribute('src', $image_name);
-        }
-
-        $content = $dom->saveHTML();
-
         $fileUpload = M_profile::find($request->id);
-        $fileUpload->profile = $content;
+        $fileUpload->profile = $request->profile;
         $fileUpload->title = $request->title;
         $fileUpload->author = "Administrator";
         $update = $fileUpload->update();
@@ -93,7 +74,8 @@ class Profile extends Controller
     public function sejarah()
     {
         $data  = [
-            'title'  => 'Sejarah Desa'
+            'title'     => 'Sejarah Desa',
+            'sejarah'   => M_sejarah::all()
         ];
         return view('admin.sejarahdesa', $data);
     }

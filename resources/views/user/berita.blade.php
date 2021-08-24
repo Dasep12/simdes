@@ -148,7 +148,6 @@
         <!-- end of kolom populer -->
     </div>
 </div>
-<<<<<<< HEAD:resources/views/home.blade.php
 <!-- end of kolom populer -->
 <!-- end of colom kanan -->
 
@@ -156,23 +155,6 @@
 <!-- perangakt desa  -->
 
 <!-- end of perangkat desa -->
-=======
-<!-- end of colom kanan -->
-
-
-
-
-
-<!-- tentang desa dan sejarah desa -->
-<section class="row">
-    <div class="card">
-        <div class="card-body">
-            <h2>Hallo</h2>
-        </div>
-    </div>
-</section>
-<!--  -->
->>>>>>> 79ec603d9b8631911eec09895654fcc131027f7c:resources/views/user/berita.blade.php
 @endsection
 
 <script>
