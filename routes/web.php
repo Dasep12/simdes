@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\admin\Pemerintah;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\Profile;
 use Illuminate\Support\Facades\Route;
@@ -39,4 +40,7 @@ Route::post('/admin/uploadImage', [Profile::class, 'uploadImage'])->name('admin.
 Route::get('/admin/sejarah', [Profile::class, 'sejarah'])->name('daftar_Sejarah');
 Route::get('/admin/editSejarah/{id}', [Profile::class, 'form_edit_sejarah']);
 Route::post('/admin/updateSejarah', [Profile::class, 'updateSejarah']);
+Route::get('/admin/visimisi', [Pemerintah::class, 'visimisi'])->name('dataVisiMisi');
+Route::get('/admin/editVisiMisi', [Pemerintah::class, 'editVisimisi']);
+Route::post('/admin/updateVisi', [Pemerintah::class, 'updateVisMisi']);
 // 

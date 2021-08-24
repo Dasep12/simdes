@@ -28,7 +28,7 @@
                     <!--<i class="fa fa-reorder"></i>-->
                     <!--</button>-->
 
-                    <a href="#" class="navbar-brand">SID Gunung Halu</a>
+                    <a href="#" class="navbar-brand">Informasi Desa Puncak Sari</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-reorder"></i>
                     </button>

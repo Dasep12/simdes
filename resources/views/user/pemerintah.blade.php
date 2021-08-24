@@ -16,7 +16,7 @@
                 </div>
                 <h2 class="">
                     SUSUNAN ORGANISASI DAN TATA KERJA PEMERINTAH DESA<br>
-                    DESA GUNUNGHALU KECAMATAN GUNUNGHALU KABUPATEN BANDUNG BARAT
+                    DESA PUNCAK SARI KECAMATAN GUNUNGHALU KABUPATEN BANDUNG BARAT
                 </h2>
                 PEMERINTAH DESA
                 <p>&nbsp;&nbsp;</p>

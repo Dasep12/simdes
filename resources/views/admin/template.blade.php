@@ -50,24 +50,32 @@
 
                     </li>
                     <li class="">
-                        <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Berita</span><span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Berita</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li class="{{ (request()->is('admin/create_berita')) ? 'active' : '' }}"><a href="index.html">Buat</a></li>
                             <li class="{{ (request()->is('admin/daftar_berita')) ? 'active' : '' }}"><a href="dashboard_2.html">Daftar Berita</a></li>
                         </ul>
                     </li>
-                    <li class="">
+                    <li class="
+                     @if(request()->is('admin/profile') || request()->is('admin/sejarah') )
+                        {{ 'active' }}
+                     @endif
+                     ">
                         <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Profile Desa</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li class="{{ (request()->is('admin/profile')) ? 'active' : '' }}"><a href="/admin/profile">Profile Desa</a></li>
                             <li class="{{ (request()->is('admin/sejarah')) ? 'active' : '' }}"><a href="/admin/sejarah">Sejarah Desa</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="
+                     @if(request()->is('admin/visimisi') || request()->is('admin/pemerintah') )
+                        {{ 'active' }}
+                     @endif
+                     ">
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Pemerintahan Desa</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="graph_flot.html">Visi & Misi</a></li>
-                            <li><a href="graph_morris.html">Pemerintah Desa</a></li>
+                            <li class="{{ (request()->is('admin/visimisi')) ? 'active' : '' }}"><a href="/admin/visimisi">Visi & Misi</a></li>
+                            <li class="{{ (request()->is('admin/pemerintah')) ? 'active' : '' }}"><a href="/admin/pemerintah">Pemerintah Desa</a></li>
                         </ul>
                     </li>
                     <li>
