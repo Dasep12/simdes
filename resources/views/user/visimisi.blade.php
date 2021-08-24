@@ -7,20 +7,20 @@
     <div class="col-lg-8 mb-4">
         <div class="card">
             <div class="card-body">
-                <h2>Visi Misi Desa GunungHalu</h2>
-                <p>Administrator <i class="fa fa-user"></i> </p>
+                <h2>Visi Misi Desa PuncakSari</h2>
+                <p>{{ $data->author }} <i class="fa fa-user"></i> </p>
                 <div class="form-group text-center">
-                    <img height="300px" width="600px" src="img/kecamatan-gunung-halu.jpg" class="img-fluid">
+                    <img height="300px" width="600px" src="upload/{{ $data->cover }}" class="img-fluid">
 
                 </div>
                 <h2 class="text-center">Visi</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet autem dolorem tempore alias minima, earum nisi expedita at nostrum quidem quod consectetur repellat maiores. Nobis soluta nihil sit deserunt saepe?
+                    {{ $data->visi }}
                 </p>
 
                 <h2 class="text-center">Misi</h2>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi consequuntur facere nostrum iure earum. Repellat doloribus natus eum assumenda. Quo nulla possimus nam odio soluta ipsam quisquam recusandae ratione unde nesciunt magnam molestias dolorem sunt sit incidunt voluptatum deleniti, reprehenderit fugiat commodi culpa!
+                    {{ $data->misi }}
                 </p>
             </div>
         </div>

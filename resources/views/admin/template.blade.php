@@ -78,6 +78,7 @@
                             <li class="{{ (request()->is('admin/pemerintah')) ? 'active' : '' }}"><a href="/admin/pemerintah">Pemerintah Desa</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Lembaga Masyarakat</span></a>
                     </li>

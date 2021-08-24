@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\M_profile;
 use App\Models\M_sejarah;
+use App\Models\M_visimisi;
 
 class HomeController extends Controller
 {
@@ -47,7 +48,10 @@ class HomeController extends Controller
     //halaman visi misi
     public function visimisi()
     {
-        return view('user.visimisi');
+        $data = [
+            'data'  => M_visimisi::first()
+        ];
+        return view('user.visimisi', $data);
     }
 
     //halaman pemerintah

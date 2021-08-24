@@ -38,11 +38,14 @@
                     <div class="form-group">
                         <label>Visi</label>
                         <input type="hidden" name="id" value="{{ $data->id }}">
-                        <textarea class="form-control" name="visi">{{ $data->visi }}</textarea>
+                        <textarea rows="8" class="form-control" name="visi">{{ $data->visi }}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Misi</label>
-                        <textarea class="form-control" name="misi">{{ $data->misi }}</textarea>
+                        <textarea rows="8" class="form-control" name="misi">{{ $data->misi }}</textarea>
+                    </div>
+                    <div class="form-control">
+                        <input type="file" name="cover">
                     </div>
                 </div>
                 <button class="btn btn-danger">Simpan</button>
