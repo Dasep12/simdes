@@ -255,6 +255,11 @@
                 filebrowserUploadMethod: 'form'
             });
 
+            CKEDITOR.replace('pemerintah', {
+                filebrowserUploadUrl: "{{route('admin.update', ['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod: 'form'
+            });
+
             $('.dataTables-example').DataTable({
                 pageLength: 10,
                 responsive: true,

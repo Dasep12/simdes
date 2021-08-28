@@ -44,4 +44,6 @@ Route::get('/admin/visimisi', [Pemerintah::class, 'visimisi'])->name('dataVisiMi
 Route::get('/admin/editVisiMisi', [Pemerintah::class, 'editVisimisi']);
 Route::post('/admin/updateVisi', [Pemerintah::class, 'updateVisMisi']);
 Route::get('/admin/pemerintah', [Pemerintah::class, 'pemerintah']);
+Route::post('/admin/pemerintah', [Pemerintah::class, 'updatePemerintah']);
+Route::get('/admin/pemerintah/{id}', [Pemerintah::class, 'form_pemerintah']);
 // 

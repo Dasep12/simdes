@@ -15,6 +15,7 @@ class CreateMPemerintahsTable extends Migration
     {
         Schema::create('m_pemerintahs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('judul');
             $table->longText('pemerintah');
             $table->string('cover');
             $table->string('author');

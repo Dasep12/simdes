@@ -73,4 +73,38 @@ class Pemerintah extends Controller
         ];
         return view('admin.pemerintah', $data);
     }
+
+
+    public function form_pemerintah($id)
+    {
+        $data = [
+            'title'   => 'Pemerintahan',
+            'data'    => M_pemerintah::find($id)
+        ];
+        return view('admin.edit_pemerintah', $data);
+    }
+
+    public function updatePemerintah(Request $request)
+    {
+        $request->validate([
+            'judul'         => 'required|max:255',
+            'pemerintah'    => 'min:255|required'
+        ]);
+
+        $data = M_pemerintah::find($request->id);
+
+        if ($request->file == null) {
+            $data->judul  = $request->judul;
+            $data->pemerintah  = $request->pemerintah;
+            $data->update();
+            return redirect('/admin/pemerintah')->with('success', 'Berhasil update');
+        } else {
+            $filename    = time() . "." .  $request->file->extension();
+            $request->file->move(public_path('upload'), $filename);
+            $data->judul  = $request->judul;
+            $data->pemerintah  = $request->pemerintah;
+            $data->cover   = $filename;
+            $data->update();
+        }
+    }
 }

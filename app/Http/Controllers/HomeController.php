@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\M_profile;
 use App\Models\M_sejarah;
 use App\Models\M_visimisi;
+use App\Models\M_pemerintah;
 
 class HomeController extends Controller
 {
@@ -57,7 +58,10 @@ class HomeController extends Controller
     //halaman pemerintah
     public function pemerintah()
     {
-        return view('user.pemerintah');
+        $data =  [
+            'data' => M_pemerintah::first()
+        ];
+        return view('user.pemerintah', $data);
     }
     //end 
 

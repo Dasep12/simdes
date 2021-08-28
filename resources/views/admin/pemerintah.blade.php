@@ -23,9 +23,9 @@
 <div class="wrapper wrapper-content">
     <div class="row">
         <div class="col-lg-12">
-            @if(Session('info'))
-            <div class="alert alert-danger">
-                <p>{{ Session('info') }}}</p>
+            @if(Session('success'))
+            <div class="alert alert-success">
+                <p>{{ Session('success') }}</p>
             </div>
             @endif
             <div class="ibox ">
@@ -53,9 +53,9 @@
                                 @foreach($data as $p)
                                 <tr class="gradeX">
                                     <td><?= $no++ ?></td>
-                                    <td>{!! $p->pemerintah !!}</td>
+                                    <td>{!! substr($p->pemerintah,0,200) !!}</td>
                                     <td>
-                                        <a href="/admin/editPemerintah" class="btn btn-info btn-sm btn-xs">edit</a>
+                                        <a href="/admin/pemerintah/{{ $p->id }}" class="btn btn-info btn-sm btn-xs">edit</a>
                                         <a target="_blank" href="/pemerintah" class="btn btn-success btn-sm btn-xs">lihat</a>
                                     </td>
                                 </tr>
