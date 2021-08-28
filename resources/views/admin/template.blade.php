@@ -45,7 +45,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span>
+                        <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span>
                         </a>
 
                     </li>
@@ -61,7 +61,7 @@
                         {{ 'active' }}
                      @endif
                      ">
-                        <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Profile Desa</span><span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Profile Desa</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li class="{{ (request()->is('admin/profile')) ? 'active' : '' }}"><a href="/admin/profile">Profile Desa</a></li>
                             <li class="{{ (request()->is('admin/sejarah')) ? 'active' : '' }}"><a href="/admin/sejarah">Sejarah Desa</a></li>
@@ -78,7 +78,19 @@
                             <li class="{{ (request()->is('admin/pemerintah')) ? 'active' : '' }}"><a href="/admin/pemerintah">Pemerintah Desa</a></li>
                         </ul>
                     </li>
-
+                    <li class="
+                     @if(request()->is('admin/administratif') || request()->is('admin/pendidikan') || request()->is('admin/jenis_kelamin') || request()->is('admin/umur') || request()->is('admin/warga_negara') )
+                        {{ 'active' }}
+                     @endif
+                     ">
+                        <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Data Desa</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li class="{{ (request()->is('admin/administratif')) ? 'active' : '' }}"><a href="/admin/administratif">Data Administratif</a></li>
+                            <li class="{{ (request()->is('admin/pendidikan')) ? 'active' : '' }}"><a href="/admin/pendidikan">Pendidikan</a></li>
+                            <li class="{{ (request()->is('admin/jk')) ? 'active' : '' }}"><a href="/admin/jk">Jenis Kelamin</a></li>
+                            <li class="{{ (request()->is('admin/umur')) ? 'active' : '' }}"><a href="/admin/umur">Kelompok Umur</a></li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Lembaga Masyarakat</span></a>
                     </li>
