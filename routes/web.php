@@ -51,4 +51,7 @@ Route::get('/admin/pemerintah/{id}', [Pemerintah::class, 'form_pemerintah']);
 Route::get('/admin/administratif', [DataDesa::class, 'administratif']);
 Route::get('/admin/administratif/edit/{id}', [DataDesa::class, 'edit_administratif']);
 Route::get('/admin/administratif/add', [DataDesa::class, 'add_administratif']);
+Route::post('/admin/administratif/add', [DataDesa::class, 'store_administratif']);
+Route::get('/admin/administratif/del/{id}', [DataDesa::class, 'del_administratif']);
+Route::post('/admin/administratif/update', [DataDesa::class, 'update_administratif']);
 // 

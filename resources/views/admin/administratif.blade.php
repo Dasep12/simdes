@@ -3,13 +3,13 @@
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-4">
-        <h2>Pemerintahan Desa</h2>
+        <h2>Data Desa</h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="/profile">This is</a>
             </li>
             <li class="breadcrumb-item active">
-                <strong>Pemerintahan Desa</strong>
+                <strong>Administratif Desa</strong>
             </li>
         </ol>
     </div>
@@ -66,9 +66,9 @@
                                     <td>{{ $p->laki_laki }}</td>
                                     <td>{{ $p->perempuan }}</td>
                                     <td>
-                                        <a href="/admin/pemerintah/del/{{ $p->id }}" class="btn btn-danger btn-sm btn-xs">delete</a>
+                                        <a onclick="return confirm('Yakin Hapus')" href="/admin/administratif/del/{{ $p->id }}" class="btn btn-danger btn-sm btn-xs">delete</a>
                                         <a href="/admin/administratif/edit/{{ $p->id }}" class="btn btn-info btn-sm btn-xs">edit</a>
-                                        <a target="_blank" href="/pemerintah" class="btn btn-success btn-sm btn-xs">lihat</a>
+                                        <a target="_blank" href="/wilayah" class="btn btn-success btn-sm btn-xs">lihat</a>
                                     </td>
                                 </tr>
                                 @endforeach

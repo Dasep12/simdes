@@ -23,11 +23,11 @@
 <div class="wrapper wrapper-content">
     <div class="row">
         <div class="col-lg-12">
-            <form action="/admin/administratif" method="post" enctype="multipart/form-data">
+            <form action="/admin/administratif/update" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card ">
                     <div class="card-body">
-                        <input type="hidden" value="{{ $data->id }}">
+                        <input type="hidden" name="id" value="{{ $data->id }}">
                         <div class="form-group">
                             <label>Nama Daerah</label>
                             <input type="text" class="form-control" name="daerah" value="{{ $data->daerah }}">
@@ -53,8 +53,8 @@
                             <input type="text" class="form-control" name="jumlah_jiwa" value="{{ $data->jumlah_jiwa }}">
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-danger">Simpan</button>
-                            <button class="btn btn-danger">Simpan</button>
+                            <button class="btn btn-info">Simpan</button>
+                            <a href="/admin/administratif" class="btn btn-danger">Kembali</a>
                         </div>
                     </div>
             </form>
