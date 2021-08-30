@@ -55,3 +55,12 @@ Route::post('/admin/administratif/add', [DataDesa::class, 'store_administratif']
 Route::get('/admin/administratif/del/{id}', [DataDesa::class, 'del_administratif']);
 Route::post('/admin/administratif/update', [DataDesa::class, 'update_administratif']);
 // 
+
+
+//jenis kelamin
+Route::get('/admin/jk',[DataDesa::class,'jenis_kelamin']);
+Route::get('/admin/jk/add',[DataDesa::class,'add_jenis_kelamin']);
+Route::post('/admin/jk/add',[DataDesa::class,'store_jenis_kelamin']);
+Route::get('/admin/jk/edit/{id}',[DataDesa::class,'edit_jk']);
+Route::post('/admin/jk/update',[DataDesa::class,'update_edit_jk']);
+Route::get('/admin/jk/del/{id}',[DataDesa::class,'del_jk']);

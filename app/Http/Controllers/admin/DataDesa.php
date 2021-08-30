@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Administratif;
 use App\Models\M_pemerintah;
-
+use App\Models\M_jk ;
 class DataDesa extends Controller
 {
     //
@@ -81,10 +81,15 @@ class DataDesa extends Controller
             ]
         );
         $data = Administratif::find($request->id);
-        $data->daerah = $request->daerah;
+        $data->daerah       = $request->daerah;
+        $data->jumlah_rt    = $request->jumlah_rt ;
+        $data->jumlah_kk    = $request->jumlah_kk ;
+        $data->laki_laki    = $request->laki_laki ;
+        $data->perempuan    = $request->perempuan ;
+        $data->jumlah_jiwa  = $request->jumlah_jiwa ;
         $data->update();
-        dd($request->all());
-        // return redirect('/admin/administratif/')->with('success', 'Data Berhasil di update');
+       // dd($request->all());
+        return redirect('/admin/administratif/')->with('success', 'Data Berhasil di update');
     }
 
 
@@ -93,5 +98,73 @@ class DataDesa extends Controller
         $data = Administratif::find($id);
         $data->delete();
         return redirect('/admin/administratif')->with('success', 'Data Berhasil di Hapus');
+    }
+
+
+    //jenis kelamin 
+    public function jenis_kelamin()
+    {
+        $data = [
+            'title' => 'Data Jenis Kelamin' ,
+            'data' => M_jk::all()
+        ];
+        return view('admin.jk',$data);
+    }
+
+    public function add_jenis_kelamin()
+    {
+        $data = [
+            'title'  => 'Tambah Data' ,
+        ];
+        return view('admin.jk_add',$data); 
+    }
+
+    public function store_jenis_kelamin(Request $request)
+    {
+        $request->validate([
+            'kelompok'   => 'required' ,
+            'jumlah'     => 'required'
+        ], [
+            'kelompok.required' => 'data harus di isi' ,
+            'jumlah.required'   => 'data harus di isi'
+        ]);
+
+        M_jk::create($request->all());
+        return redirect('/admin/jk/add')->with('info','Data di Tambah');
+
+    }
+
+    public function edit_jk($id)
+    {
+        $data = [
+            'title'  => 'Edit Data' ,
+            'data'   => M_jk::find($id)
+        ];
+        return view('admin.jk_edit',$data);
+    }
+
+
+    public function update_edit_jk(Request $request)
+    {
+        $request->validate([
+            'kelompok'   => 'required' ,
+            'jumlah'     => 'required'
+        ], [
+            'kelompok.required' => 'data harus di isi' ,
+            'jumlah.required'   => 'data harus di isi'
+        ]);
+
+        $data = M_jk::find($request->id);
+        $data->kelompok = $request->kelompok ;
+        $data->jumlah   = $request->jumlah ;
+        $data->update();
+        return redirect('/admin/jk')->with('success','Data di Update');
+    }
+
+    public function del_jk($id)
+    {
+        $data = M_jk::find($id);
+        $data->delete();
+        return redirect('/admin/jk')->with('success', 'Data Berhasil di Hapus');
     }
 }

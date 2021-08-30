@@ -79,7 +79,7 @@
                         </ul>
                     </li>
                     <li class="
-                     @if(request()->is('admin/administratif') || request()->is('admin/pendidikan') || request()->is('admin/jenis_kelamin') || request()->is('admin/umur') || request()->is('admin/warga_negara') || request()->is('admin/administratif/add') )
+                     @if(request()->is('admin/administratif') || request()->is('admin/pendidikan') || request()->is('admin/jk') || request()->is('admin/jk/add') || request()->is('admin/umur') || request()->is('admin/warga_negara') || request()->is('admin/administratif/add') )
                         {{ 'active' }}
                      @endif
                      ">
