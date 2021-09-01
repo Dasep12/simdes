@@ -64,3 +64,12 @@ Route::post('/admin/jk/add',[DataDesa::class,'store_jenis_kelamin']);
 Route::get('/admin/jk/edit/{id}',[DataDesa::class,'edit_jk']);
 Route::post('/admin/jk/update',[DataDesa::class,'update_edit_jk']);
 Route::get('/admin/jk/del/{id}',[DataDesa::class,'del_jk']);
+
+
+//jenis kelamin
+Route::get('/admin/umur',[DataDesa::class,'umur']);
+Route::get('/admin/umur/add',[DataDesa::class,'add_umur']);
+Route::post('/admin/umur/add',[DataDesa::class,'store_umur']);
+Route::get('/admin/umur/edit/{id}',[DataDesa::class,'edit_umur']);
+Route::post('/admin/umur/update',[DataDesa::class,'update_edit_umur']);
+Route::get('/admin/umur/del/{id}',[DataDesa::class,'del_umur']);

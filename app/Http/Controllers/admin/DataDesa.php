@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Administratif;
 use App\Models\M_pemerintah;
 use App\Models\M_jk ;
+use App\Models\M_umur;
 class DataDesa extends Controller
 {
     //
@@ -166,5 +167,75 @@ class DataDesa extends Controller
         $data = M_jk::find($id);
         $data->delete();
         return redirect('/admin/jk')->with('success', 'Data Berhasil di Hapus');
+    }
+
+
+    //kelompok umur
+    public function umur()
+    {
+        $data = [
+            'title'  => 'Data Kelompok Umur'  ,
+            'data'   => M_umur::all()
+        ];
+        return view('admin.umur',$data);
+    }
+
+    public function add_umur()
+    {
+        $data = [
+            'title' => 'Data Kelompok Umur'
+        ];
+        return view('admin.umur_add',$data);
+    }
+    public function store_umur(Request $request)
+    {
+        $validate = $request->validate([
+            'kelompok'    => 'required|unique:m_umurs' ,
+            'laki_laki'   => 'required' ,
+            'perempuan'   => 'required'
+        ],[
+            'kelompok.required'   => 'harus di isi ' ,
+            'laki_laki.required'  => 'harus di isi ' ,
+            'perempuan.required'  => 'harus di isi ' ,
+            'kelompok.unique'     => 'kelompok sudah terisi'
+        ]);
+
+        M_umur::create($validate);
+        return redirect('/admin/umur')->with('success', 'Data Berhasil di tambah');
+    }
+
+    public function edit_umur($id)
+    {
+        $data = [
+            'title'  => 'Edit Data' ,
+            'data'   => M_umur::find($id)
+        ];
+        return view('admin.umur_edit',$data);
+    }
+
+    public function update_edit_umur(Request $request)
+    {
+        $validate = $request->validate([
+            'kelompok'    => 'required' ,
+            'laki_laki'   => 'required' ,
+            'perempuan'   => 'required'
+        ],[
+            'kelompok.required'   => 'harus di isi ' ,
+            'laki_laki.required'  => 'harus di isi ' ,
+            'perempuan.required'  => 'harus di isi ' ,
+        ]);
+
+        $data = M_umur::find($request->id);
+        $data->kelompok = $request->kelompok ;
+        $data->laki_laki = $request->laki_laki ;
+        $data->perempuan = $request->perempuan ;
+        $data->update();
+        return redirect('/admin/umur')->with('success', 'Data Berhasil di update');
+    }
+    public function del_umur($id)
+    {
+        $data = M_umur::find($id);
+        $data->delete();
+        return redirect('/admin/umur')->with('success', 'Data Berhasil di Hapus');
     }
 }
