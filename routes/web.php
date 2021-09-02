@@ -56,9 +56,28 @@ Route::get('/admin/administratif/add', [DataDesa::class, 'add_administratif']);
 Route::post('/admin/administratif/add', [DataDesa::class, 'store_administratif']);
 Route::get('/admin/administratif/del/{id}', [DataDesa::class, 'del_administratif']);
 Route::post('/admin/administratif/update', [DataDesa::class, 'update_administratif']);
-// 
-
 
 //pendidikan 
 Route::get('/admin/pendidikan', [DataDesa::class, 'pendidikan']);
 Route::get('/admin/pendidikan/add', [DataDesa::class, 'add_pendidikan']);
+Route::post('/admin/pendidikan/add', [DataDesa::class, 'store_pendidikan']);
+Route::get('/admin/pendidikan/edit/{id}', [DataDesa::class, 'edit_pendidikan']);
+Route::get('/admin/pendidikan/del/{id}', [DataDesa::class, 'del_pendidikan']);
+Route::post('/admin/pendidikan/update', [DataDesa::class, 'update_pendidikan']);
+
+//jenis kelamin
+Route::get('/admin/jk', [DataDesa::class, 'jenis_kelamin']);
+Route::get('/admin/jk/add', [DataDesa::class, 'add_jenis_kelamin']);
+Route::post('/admin/jk/add', [DataDesa::class, 'store_jenis_kelamin']);
+Route::get('/admin/jk/edit/{id}', [DataDesa::class, 'edit_jk']);
+Route::post('/admin/jk/update', [DataDesa::class, 'update_edit_jk']);
+Route::get('/admin/jk/del/{id}', [DataDesa::class, 'del_jk']);
+
+
+//jenis kelamin
+Route::get('/admin/umur', [DataDesa::class, 'umur']);
+Route::get('/admin/umur/add', [DataDesa::class, 'add_umur']);
+Route::post('/admin/umur/add', [DataDesa::class, 'store_umur']);
+Route::get('/admin/umur/edit/{id}', [DataDesa::class, 'edit_umur']);
+Route::post('/admin/umur/update', [DataDesa::class, 'update_edit_umur']);
+Route::get('/admin/umur/del/{id}', [DataDesa::class, 'del_umur']);

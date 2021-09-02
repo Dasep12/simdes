@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Administratif;
 use App\Models\M_pemerintah;
+use App\Models\M_jk;
 use App\Models\M_pendidikan;
+use App\Models\M_umur;
 
 class DataDesa extends Controller
 {
@@ -82,10 +84,15 @@ class DataDesa extends Controller
             ]
         );
         $data = Administratif::find($request->id);
-        $data->daerah = $request->daerah;
+        $data->daerah       = $request->daerah;
+        $data->jumlah_rt    = $request->jumlah_rt;
+        $data->jumlah_kk    = $request->jumlah_kk;
+        $data->laki_laki    = $request->laki_laki;
+        $data->perempuan    = $request->perempuan;
+        $data->jumlah_jiwa  = $request->jumlah_jiwa;
         $data->update();
-        dd($request->all());
-        // return redirect('/admin/administratif/')->with('success', 'Data Berhasil di update');
+        // dd($request->all());
+        return redirect('/admin/administratif/')->with('success', 'Data Berhasil di update');
     }
 
     public function del_administratif($id)
@@ -96,13 +103,211 @@ class DataDesa extends Controller
     }
 
 
+    //jenis kelamin 
+    public function jenis_kelamin()
+    {
+        $data = [
+            'title' => 'Data Jenis Kelamin',
+            'data' => M_jk::all()
+        ];
+        return view('admin.jk', $data);
+    }
 
+    public function add_jenis_kelamin()
+    {
+        $data = [
+            'title'  => 'Tambah Data',
+        ];
+        return view('admin.jk_add', $data);
+    }
+
+    public function store_jenis_kelamin(Request $request)
+    {
+        $validate = $request->validate([
+            'kelompok'   => 'required',
+            'jumlah'     => 'required'
+        ], [
+            'kelompok.required' => 'data harus di isi',
+            'jumlah.required'   => 'data harus di isi'
+        ]);
+
+        $validate['belum_isi']  = $request->belum_isi;
+        $validate['author']     = $request->author;
+
+        M_jk::create($validate);
+        return redirect('/admin/jk/add')->with('info', 'Data di Tambah');
+    }
+
+    public function edit_jk($id)
+    {
+        $data = [
+            'title'  => 'Edit Data',
+            'data'   => M_jk::find($id)
+        ];
+        return view('admin.jk_edit', $data);
+    }
+
+
+    public function update_edit_jk(Request $request)
+    {
+        $request->validate([
+            'kelompok'   => 'required',
+            'jumlah'     => 'required'
+        ], [
+            'kelompok.required' => 'data harus di isi',
+            'jumlah.required'   => 'data harus di isi'
+        ]);
+
+        $data = M_jk::find($request->id);
+        $data->kelompok = $request->kelompok;
+        $data->jumlah   = $request->jumlah;
+        $data->update();
+        return redirect('/admin/jk')->with('success', 'Data di Update');
+    }
+
+    public function del_jk($id)
+    {
+        $data = M_jk::find($id);
+        $data->delete();
+        return redirect('/admin/jk')->with('success', 'Data Berhasil di Hapus');
+    }
+
+
+    //kelompok umur
+    public function umur()
+    {
+        $data = [
+            'title'  => 'Data Kelompok Umur',
+            'data'   => M_umur::all()
+        ];
+        return view('admin.umur', $data);
+    }
+
+    public function add_umur()
+    {
+        $data = [
+            'title' => 'Data Kelompok Umur'
+        ];
+        return view('admin.umur_add', $data);
+    }
+    public function store_umur(Request $request)
+    {
+        $validate = $request->validate([
+            'kelompok'    => 'required|unique:m_umurs',
+            'laki_laki'   => 'required',
+            'perempuan'   => 'required'
+        ], [
+            'kelompok.required'   => 'harus di isi ',
+            'laki_laki.required'  => 'harus di isi ',
+            'perempuan.required'  => 'harus di isi ',
+            'kelompok.unique'     => 'kelompok sudah terisi'
+        ]);
+
+        M_umur::create($validate);
+        return redirect('/admin/umur')->with('success', 'Data Berhasil di tambah');
+    }
+
+    public function edit_umur($id)
+    {
+        $data = [
+            'title'  => 'Edit Data',
+            'data'   => M_umur::find($id)
+        ];
+        return view('admin.umur_edit', $data);
+    }
+
+    public function update_edit_umur(Request $request)
+    {
+        $validate = $request->validate([
+            'kelompok'    => 'required',
+            'laki_laki'   => 'required',
+            'perempuan'   => 'required'
+        ], [
+            'kelompok.required'   => 'harus di isi ',
+            'laki_laki.required'  => 'harus di isi ',
+            'perempuan.required'  => 'harus di isi ',
+        ]);
+
+        $data = M_umur::find($request->id);
+        $data->kelompok = $request->kelompok;
+        $data->laki_laki = $request->laki_laki;
+        $data->perempuan = $request->perempuan;
+        $data->update();
+        return redirect('/admin/umur')->with('success', 'Data Berhasil di update');
+    }
+    public function del_umur($id)
+    {
+        $data = M_umur::find($id);
+        $data->delete();
+        return redirect('/admin/umur')->with('success', 'Data Berhasil di Hapus');
+    }
+
+
+    //data pendidikan
     public function pendidikan()
     {
         $data = [
-            'title'   => 'Pendidikan',
-            'data'    => M_pendidikan::all()
+            'title' => 'Data Pendidikan',
+            'data'  => M_pendidikan::all()
         ];
         return view('admin.pendidikan', $data);
+    }
+
+    public function add_pendidikan()
+    {
+        $data = [
+            'title'  => 'Data Pendidikan'
+        ];
+
+        return view('admin.pendidikan_add', $data);
+    }
+
+    public function store_pendidikan(Request $request)
+    {
+        $validate = $request->validate([
+            'kelompok'    => 'required|unique:m_pendidikans',
+            'laki_laki'   => 'required|numeric',
+            'perempuan'   => 'required|numeric',
+        ], [
+            'kelompok.required'     => 'harus di isi ',
+            'kelompok.unique'       => 'kelompok sudah ada',
+            'laki_laki.required'    => 'harus di isi ',
+            'laki_laki.numeric'     => 'masukan angka ',
+            'perempuan.required'    => 'harus di isi',
+            'perempuan.numeric'     => 'masukan angka'
+        ]);
+
+        $validate['author']  = 'Administrator';
+        $validate['jumlah']  = $request->laki_laki + $request->perempuan;
+
+        M_pendidikan::create($validate);
+        return redirect('admin/pendidikan')->with('success', 'Data Berhasil di tambah');
+    }
+
+    public function edit_pendidikan($id)
+    {
+        $data = [
+            'title'  => 'Data Pendidikan',
+            'data'   => M_pendidikan::find($id)
+        ];
+        return view('admin.pendidikan_edit', $data);
+    }
+
+    public function update_pendidikan(Request $request)
+    {
+        $data = M_pendidikan::find($request->id);
+        $data->kelompok = $request->kelompok;
+        $data->laki_laki = $request->laki_laki;
+        $data->perempuan = $request->perempuan;
+        $data->jumlah = $request->laki_laki + $request->perempuan;
+        $data->save();
+        return redirect('admin/pendidikan')->with('success', 'Data di Update');
+    }
+
+    public function del_pendidikan($id)
+    {
+        $data = M_pendidikan::find($id);
+        $data->delete();
+        return redirect('admin/pendidikan')->with('success', 'Data Berhasil di Hapus');
     }
 }
