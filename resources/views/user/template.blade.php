@@ -76,7 +76,6 @@
                                     <li><a href="/pendidikan">Data Pendidikan Dalam KK</a></li>
                                     <li><a href="/jk">Data Jenis Kelamin</a></li>
                                     <li><a href="/kelumur">Kelompok Umur</a></li>
-                                    <li><a href="">Data Warga Negara</a></li>
                                 </ul>
                             </li>
 
