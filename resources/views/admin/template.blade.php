@@ -212,8 +212,6 @@
                                 </li>
                             </ul>
                         </li>
-
-
                         <li>
                             <a href="login.html">
                                 <i class="fa fa-sign-out"></i> Log out
