@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Administratif;
 use App\Models\M_pemerintah;
+use App\Models\M_pendidikan;
 
 class DataDesa extends Controller
 {
@@ -87,11 +88,21 @@ class DataDesa extends Controller
         // return redirect('/admin/administratif/')->with('success', 'Data Berhasil di update');
     }
 
-
     public function del_administratif($id)
     {
         $data = Administratif::find($id);
         $data->delete();
         return redirect('/admin/administratif')->with('success', 'Data Berhasil di Hapus');
+    }
+
+
+
+    public function pendidikan()
+    {
+        $data = [
+            'title'   => 'Pendidikan',
+            'data'    => M_pendidikan::all()
+        ];
+        return view('admin.pendidikan', $data);
     }
 }

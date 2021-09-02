@@ -16,6 +16,7 @@ use App\Http\Controllers\admin\DataDesa;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\Profile;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 //Route client or user
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -48,6 +49,7 @@ Route::get('/admin/pemerintah', [Pemerintah::class, 'pemerintah']);
 Route::post('/admin/pemerintah', [Pemerintah::class, 'updatePemerintah']);
 Route::get('/admin/pemerintah/{id}', [Pemerintah::class, 'form_pemerintah']);
 
+//administratif
 Route::get('/admin/administratif', [DataDesa::class, 'administratif']);
 Route::get('/admin/administratif/edit/{id}', [DataDesa::class, 'edit_administratif']);
 Route::get('/admin/administratif/add', [DataDesa::class, 'add_administratif']);
@@ -55,3 +57,8 @@ Route::post('/admin/administratif/add', [DataDesa::class, 'store_administratif']
 Route::get('/admin/administratif/del/{id}', [DataDesa::class, 'del_administratif']);
 Route::post('/admin/administratif/update', [DataDesa::class, 'update_administratif']);
 // 
+
+
+//pendidikan 
+Route::get('/admin/pendidikan', [DataDesa::class, 'pendidikan']);
+Route::get('/admin/pendidikan/add', [DataDesa::class, 'add_pendidikan']);
