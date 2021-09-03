@@ -56,7 +56,7 @@
                         <img src="lampiran/cover.jpg">
                         <span class="list-group-item " href="#">
                             <a href="#">11 Juni 2020 11:22:04 | SID Gunung Halu</a>
-                            <a href="/detail/12">
+                            <a href="/detail/1">
                                 <h3 class="list-group-item-heading">
                                     Pembagian Sembako Paket 1 JPS Gemilang
                                 </h3>

@@ -243,6 +243,7 @@
     <!-- Mainly scripts -->
     <script src="/js/jquery-3.1.1.min.js"></script>
     <script src="/js/popper.min.js"></script>
+    <!-- <script src="/js/ckeditor.js"></script> -->
     <script src="/js/bootstrap.js"></script>
     <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
@@ -272,7 +273,7 @@
                 filebrowserUploadUrl: "{{route('admin.update', ['_token' => csrf_token() ])}}",
                 filebrowserUploadMethod: 'form'
             });
-            CKEDITOR.replace('berita', {
+            CKEDITOR.replace('content', {
                 filebrowserUploadUrl: "{{route('admin.update', ['_token' => csrf_token() ])}}",
                 filebrowserUploadMethod: 'form'
             });

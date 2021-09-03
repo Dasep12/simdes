@@ -9,8 +9,8 @@ class M_berita extends Model
     //
 
     protected $fillable = [
-        'title' ,'slug' ,'author' ,'cover' , 'date_post' ,'content'
+        'title', 'slug', 'author', 'cover', 'date_post', 'content', 'category', 'viewer'
     ];
 
-    protected $table = "Beritas" ;
+    protected $table = "Beritas";
 }

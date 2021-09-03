@@ -5,20 +5,22 @@
 <div class="row">
     <!-- colom kiri  -->
     <div class="col-lg-8">
-        <div class="ibox ">
-            <div class="ibox-title">
-                <h5 class="bg-info">Posted on {{ $data->date_post }} | <i class="fa fa-user"></i> {{$data->author}}</h5><br>
+        <div class="card">
+            <div class="card-header">
+                <h5 class="">Posted on {{ $data->date_post }} | <i class="fa fa-user"></i> {{$data->author}}</h5><br>
                 <span>dibaca {{$data->viewer}}x <i class="fa fa-book"></i> </span>
             </div>
-            <div class="ibox-content">
+            <div class="card-body">
                 <h2>{{ $data->title }}</h2>
                 <div class="form-group text-center">
-                    <img height="300px" width="600px" src="/lampiran/{{ $data->cover }}" class="img-fluid">
+                    <img height="300px" width="600px" src="/upload/{{ $data->cover }}" class="img-fluid">
 
                 </div>
-                <p>
-                    {{ $data->content }}
-                </p>
+                <div class="form-group table-responsive">
+                    <p class="text-right">
+                        {!! $data->content !!}
+                    </p>
+                </div>
                 <div class="btn-group">
                     <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Like this!</button>
                     <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>

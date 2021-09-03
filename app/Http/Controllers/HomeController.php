@@ -7,7 +7,8 @@ use App\Models\M_profile;
 use App\Models\M_sejarah;
 use App\Models\M_visimisi;
 use App\Models\M_pemerintah;
-use App\Models\Berita ;
+use App\Models\M_Berita;
+
 class HomeController extends Controller
 {
     //
@@ -20,9 +21,9 @@ class HomeController extends Controller
     public function detailBerita($slug)
     {
         $data  = [
-            'data'  => Berita::find($slug)
+            'data'  => M_berita::find($slug)
         ];
-        return view('user.detail_berita',$data);
+        return view('user.detail_berita', $data);
     }
 
     // profile desa

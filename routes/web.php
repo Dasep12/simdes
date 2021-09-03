@@ -87,3 +87,5 @@ Route::get('/admin/umur/del/{id}', [DataDesa::class, 'del_umur']);
 //berita
 Route::get('/admin/berita', [Berita::class, 'index']);
 Route::get('/admin/create_berita', [Berita::class, 'create_berita']);
+Route::post('/admin/create_berita', [Berita::class, 'store_berita']);
+Route::get('/admin/berita/del/{id}', [Berita::class, 'del_berita']);

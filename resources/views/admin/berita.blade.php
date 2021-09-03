@@ -57,8 +57,9 @@
                                     <td>{{ $p->title }}</td>
                                     <td>{{ $p->date_post }}</td>
                                     <td>
+                                        <a onclick="return confirm('hapus ?')" href="/admin/berita/del/{{ $p->id }}" class="btn btn-danger btn-sm btn-xs">delete</a>
                                         <a href="/admin/pemerintah/{{ $p->id }}" class="btn btn-info btn-sm btn-xs">edit</a>
-                                        <a target="_blank" href="/pemerintah" class="btn btn-success btn-sm btn-xs">lihat</a>
+                                        <a target="_blank" href="/detail/{{$p->id}}" class="btn btn-success btn-sm btn-xs">lihat</a>
                                     </td>
                                 </tr>
                                 @endforeach

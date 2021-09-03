@@ -23,28 +23,34 @@
 <div class="wrapper wrapper-content">
     <div class="row">
         <div class="col-lg-12">
-            <form action="/admin/berita/add" method="post" enctype="multipart/form-data">
+            <form action="/admin/create_berita" method="post" enctype="multipart/form-data">
                 @csrf
                 <label>Judul</label>
-                <input type="text" class="form-control @error('title') is-invalid  @enderror" name="title">
+                <input type="text" value="{{ old('title') }}" class="form-control @error('title') is-invalid  @enderror" name="title">
                 @error('title')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
                 @enderror
                 <label>Slug</label>
-                <input type="text" class="form-control" name="slug"><br>
-
-                <label>Cover Berita</label>
+                <input type="text" value="{{ old('slug') }}" class="form-control @error('slug') is-invalid  @enderror" name="slug">
+                @error('slug')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+                <label class="mt-1">Cover Berita</label>
                 <input type="file" class="form-control" name="file">
 
-                <div class="ibox ">
+                <div class="form-group">
+                    @error('berita')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror
                     <hr>
                     <label>Content</label>
-                    <div class="ibox-content no-padding">
-                        <textarea name="berita"></textarea>
-                    </div>
-
+                    <textarea name="content">{{ old('content') }}</textarea>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-danger">Simpan</button>
@@ -52,5 +58,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection
