@@ -58,7 +58,7 @@ class Berita extends Controller
             $request->file->move(public_path('upload'), $fileName);
             $validate['cover'] = $fileName;
             M_berita::create($validate);
-            dd($request->file);
+            return redirect('admin/berita')->with('success', 'Berita di Posting');
         }
     }
 
