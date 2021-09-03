@@ -18,5 +18,14 @@ class Berita extends Controller
         return view('admin.berita',$data);
     }
 
+
+    public function create_berita()
+    {
+        $data = [
+            'title'   => 'Create Berita' ,
+        ];
+        return view('admin.berita_add');
+    }
+
     
 }

@@ -44,7 +44,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Data</th>
+                                    <th>Title</th>
+                                    <th>Post</th>
                                     <th>Opsi</th>
                                 </tr>
                             </thead>
@@ -53,7 +54,8 @@
                                 @foreach($data as $p)
                                 <tr class="gradeX">
                                     <td><?= $no++ ?></td>
-                                    <td>{!! substr($p->pemerintah,0,200) !!}</td>
+                                    <td>{{ $p->title }}</td>
+                                    <td>{{ $p->date_post }}</td>
                                     <td>
                                         <a href="/admin/pemerintah/{{ $p->id }}" class="btn btn-info btn-sm btn-xs">edit</a>
                                         <a target="_blank" href="/pemerintah" class="btn btn-success btn-sm btn-xs">lihat</a>
