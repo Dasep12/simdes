@@ -43,7 +43,6 @@
         </div>
     </div>
 </div>
-
 <div class="row">
     <!-- colom kiri  -->
     <div class="col-lg-8">
@@ -57,12 +56,12 @@
                         <img src="lampiran/cover.jpg">
                         <span class="list-group-item " href="#">
                             <a href="#">11 Juni 2020 11:22:04 | SID Gunung Halu</a>
-                            <a href="">
+                            <a href="/detail/12">
                                 <h3 class="list-group-item-heading">
                                     Pembagian Sembako Paket 1 JPS Gemilang
                                 </h3>
                             </a>
-                            <p class="">I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. </p>
+                            <p class="">I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
                         </span>
                         <hr>
                     <?php  } ?>

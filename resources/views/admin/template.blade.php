@@ -53,7 +53,7 @@
                         <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Berita</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li class="{{ (request()->is('admin/create_berita')) ? 'active' : '' }}"><a href="index.html">Buat</a></li>
-                            <li class="{{ (request()->is('admin/daftar_berita')) ? 'active' : '' }}"><a href="dashboard_2.html">Daftar Berita</a></li>
+                            <li class="{{ (request()->is('admin/daftar_berita')) ? 'active' : '' }}"><a href="/admin/berita">Daftar Berita</a></li>
                         </ul>
                     </li>
                     <li class="

@@ -7,18 +7,17 @@
     <div class="col-lg-8">
         <div class="ibox ">
             <div class="ibox-title">
-                <h5 class="bg-info">Posted on 21 Januari 18:00 | <i class="fa fa-user"></i> Admin</h5><br>
-                <span>dibaca 100x <i class="fa fa-book"></i> </span>
+                <h5 class="bg-info">Posted on {{ $data->date_post }} | <i class="fa fa-user"></i> {{$data->author}}</h5><br>
+                <span>dibaca {{$data->viewer}}x <i class="fa fa-book"></i> </span>
             </div>
             <div class="ibox-content">
-                <h2>Pembagain Sembako</h2>
+                <h2>{{ $data->title }}</h2>
                 <div class="form-group text-center">
-                    <img height="300px" width="600px" src="lampiran/cover.jpg" class="img-fluid">
+                    <img height="300px" width="600px" src="/lampiran/{{ $data->cover }}" class="img-fluid">
 
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, commodi, odit laborum est quidem accusamus nihil voluptate doloribus quaerat molestias, reiciendis quod provident? Non suscipit harum voluptatum id cupiditate dolore?
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi nostrum, recusandae voluptatem deleniti dolorem tempora laboriosam nobis culpa debitis ut dicta consequuntur doloremque sit autem corrupti asperiores maiores ducimus delectus.
+                    {{ $data->content }}
                 </p>
                 <div class="btn-group">
                     <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Like this!</button>
