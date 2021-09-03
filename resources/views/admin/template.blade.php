@@ -271,6 +271,10 @@
                 filebrowserUploadUrl: "{{route('admin.update', ['_token' => csrf_token() ])}}",
                 filebrowserUploadMethod: 'form'
             });
+            CKEDITOR.replace('berita', {
+                filebrowserUploadUrl: "{{route('admin.update', ['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod: 'form'
+            });
 
             $('.dataTables-example').DataTable({
                 pageLength: 10,
