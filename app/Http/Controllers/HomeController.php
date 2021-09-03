@@ -7,7 +7,7 @@ use App\Models\M_profile;
 use App\Models\M_sejarah;
 use App\Models\M_visimisi;
 use App\Models\M_pemerintah;
-
+use App\Models\Berita ;
 class HomeController extends Controller
 {
     //
@@ -16,12 +16,13 @@ class HomeController extends Controller
         return view('user.home');
     }
 
-
-
     //fungsi detail berita
-    public function detailBerita()
+    public function detailBerita($slug)
     {
-        return view('user.detail_berita');
+        $data  = [
+            'data'  => Berita::find($slug)
+        ];
+        return view('user.detail_berita',$data);
     }
 
     // profile desa

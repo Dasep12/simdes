@@ -13,15 +13,15 @@
 
 use App\Http\Controllers\admin\Pemerintah;
 use App\Http\Controllers\admin\DataDesa;
+use App\Http\Controllers\admin\Profile;
 use App\Http\Controllers\admin\Berita;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\admin\Profile;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\VarDumper\Cloner\Data;
 
 //Route client or user
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/detail', [HomeController::class, 'detailBerita']);
+Route::get('/detail/{id}', [HomeController::class, 'detailBerita']);
 Route::get('/profile', [HomeController::class, 'profile']);
 Route::get('/sejarah', [HomeController::class, 'sejarah']);
 Route::get('/visimisi', [HomeController::class, 'visimisi']);
@@ -84,6 +84,6 @@ Route::post('/admin/umur/update', [DataDesa::class, 'update_edit_umur']);
 Route::get('/admin/umur/del/{id}', [DataDesa::class, 'del_umur']);
 
 
-//berita 
-Route::get('/admin/berita/add', [Berita::class, 'add']);
-Route::post('/admin/berita/add', [Berita::class, 'store_berita']);
+//berita
+Route::get('/admin/berita', [Berita::class, 'index']);
+Route::get('/admin/create_berita', [Berita::class, 'create_berita']);

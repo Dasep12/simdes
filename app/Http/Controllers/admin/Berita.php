@@ -4,37 +4,27 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\M_berita;
 
 class Berita extends Controller
 {
+
     //
-    public function add()
+    public function index()
     {
         $data = [
-            'title'  => 'Data Berita'
+            'title'   => 'Daftar Berita',
+            'data'    => M_berita::all()
         ];
-        return view('admin.berita_add', $data);
+        return view('admin.berita', $data);
     }
 
-    public function store_berita(Request $request)
+
+    public function create_berita()
     {
-
-        $validate = $request->validate([
-            'title'   => 'required|max:100',
-            'slug'    => 'required',
-            'berita'  => 'required'
-        ], [
-            'title.required'   => 'harus di isi ',
-            'title.max'        => 'maksimal 100 karakter',
-            'slug.required'    => 'harus di isi',
-            'berita'           => 'harus di isi'
-        ]);
-
-        $file = $request->file;
-        if ($file == null || $file == "") {
-            dd($request->all());
-        } else {
-            dd($request->all());
-        }
+        $data = [
+            'title'   => 'Create Berita',
+        ];
+        return view('admin.berita_add');
     }
 }
