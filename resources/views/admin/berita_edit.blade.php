@@ -27,6 +27,7 @@
                 @csrf
                 <label>Judul</label>
                 <input type="hidden" name="id" value="{{ $data->id }}">
+                <input type="hidden" name="nameFile" value="{{ $data->cover }}">
                 <input onkeyup="buat()" id="judul" type="text" value="{{ $data->title }}" class="form-control @error('title') is-invalid  @enderror" name="title">
                 @error('title')
                 <div class="invalid-feedback">

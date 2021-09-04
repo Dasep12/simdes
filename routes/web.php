@@ -15,6 +15,7 @@ use App\Http\Controllers\admin\Pemerintah;
 use App\Http\Controllers\admin\DataDesa;
 use App\Http\Controllers\admin\Profile;
 use App\Http\Controllers\admin\Berita;
+use App\Http\Controllers\admin\Gamas;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\VarDumper\Cloner\Data;
@@ -33,6 +34,7 @@ Route::get('/pendidikan', [HomeController::class, 'pendidikan']);
 Route::get('/jk', [HomeController::class, 'jk']);
 Route::get('/kelumur', [HomeController::class, 'kelumur']);
 Route::post('/komentar', [HomeController::class, 'store_comment']);
+Route::get('/gamas/detail/{id}', [HomeController::class, 'gamas_detail']);
 // 
 
 
@@ -92,3 +94,11 @@ Route::post('/admin/create_berita', [Berita::class, 'store_berita']);
 Route::get('/admin/berita/del/{id}', [Berita::class, 'del_berita']);
 Route::get('/admin/berita/edit/{id}', [Berita::class, 'form_edit']);
 Route::post('/admin/update_berita', [Berita::class, 'update_berita']);
+
+//Lembaga Masyarakat 
+Route::get('/admin/gamas', [Gamas::class, 'index']);
+Route::get('/admin/gamas/add', [Gamas::class, 'add']);
+Route::post('/admin/gamas/add', [Gamas::class, 'store']);
+Route::get('/admin/gamas/edit/{id}', [Gamas::class, 'edit']);
+Route::post('/admin/gamas/update', [Gamas::class, 'update']);
+Route::get('/admin/gamas/del/{id}', [Gamas::class, 'del']);

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\M_berita;
 use Illuminate\Foundation\Console\Presets\React;
 use Illuminate\Support\Str;
+use Storage;
 
 date_default_timezone_set('Asia/Jakarta');
 
@@ -107,6 +108,12 @@ class Berita extends Controller
             $data->save();
             return redirect('admin/berita')->with('success', 'Berita di Sunting');
         } else {
+
+            //delete file jika ada
+            if (Storage::exists("upload/" . $request->nameFile)) {
+                Storage::delete("upload/" . $request->nameFile);
+            }
+
             $fileName = time() . "." . $request->file->extension();
             $request->file->move(public_path('upload'), $fileName);
             $data = M_berita::find($id);

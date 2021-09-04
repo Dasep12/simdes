@@ -94,8 +94,12 @@
                             <li class="{{ (request()->is('admin/umur')) ? 'active' : '' }}"><a href="/admin/umur">Kelompok Umur</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Lembaga Masyarakat</span></a>
+                    <li class="
+                     @if(request()->is('admin/gamas') || request()->is('admin/gamas/add') )
+                        {{ 'active' }}
+                     @endif
+                     ">
+                        <a href="/admin/gamas"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Lembaga Masyarakat</span></a>
                     </li>
                     <li>
                         <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
@@ -274,6 +278,11 @@
                 filebrowserUploadMethod: 'form'
             });
             CKEDITOR.replace('content', {
+                filebrowserUploadUrl: "{{route('admin.update', ['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod: 'form'
+            });
+
+            CKEDITOR.replace('keterangan', {
                 filebrowserUploadUrl: "{{route('admin.update', ['_token' => csrf_token() ])}}",
                 filebrowserUploadMethod: 'form'
             });
