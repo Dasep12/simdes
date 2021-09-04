@@ -14,7 +14,7 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
-
+    <script src="/js/jquery-3.1.1.min.js"></script>
 </head>
 
 <body class="">
@@ -50,7 +50,7 @@
 
                     </li>
                     <li class="
-                    @if(request()->is('admin/berita') || request()->is('admin/berita/add') )
+                    @if(request()->is('admin/berita') || request()->is('admin/create_berita') )
                         {{ 'active' }}
                      @endif">
                         <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Berita</span><span class="fa arrow"></span></a>
@@ -241,7 +241,7 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="/js/jquery-3.1.1.min.js"></script>
+
     <script src="/js/popper.min.js"></script>
     <!-- <script src="/js/ckeditor.js"></script> -->
     <script src="/js/bootstrap.js"></script>

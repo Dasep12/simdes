@@ -23,17 +23,18 @@
 <div class="wrapper wrapper-content">
     <div class="row">
         <div class="col-lg-12">
-            <form action="/admin/create_berita" method="post" enctype="multipart/form-data">
+            <form action="/admin/update_berita" method="post" enctype="multipart/form-data">
                 @csrf
                 <label>Judul</label>
-                <input onkeyup="buat()" id="judul" type="text" value="{{ old('title') }}" class="form-control @error('title') is-invalid  @enderror" name="title">
+                <input type="hidden" name="id" value="{{ $data->id }}">
+                <input onkeyup="buat()" id="judul" type="text" value="{{ $data->title }}" class="form-control @error('title') is-invalid  @enderror" name="title">
                 @error('title')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
                 @enderror
                 <label>Slug</label>
-                <input type="text" id="slug" value="{{ old('slug') }}" class="form-control @error('slug') is-invalid  @enderror" name="slug">
+                <input type="text" id="slug" value="{{ $data->slug }}" class="form-control @error('slug') is-invalid  @enderror" name="slug">
                 @error('slug')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -50,7 +51,7 @@
                     @enderror
                     <hr>
                     <label>Content</label>
-                    <textarea name="content">{{ old('content') }}</textarea>
+                    <textarea name="content">{{ $data->content }}</textarea>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-danger">Simpan</button>

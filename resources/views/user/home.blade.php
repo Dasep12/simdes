@@ -11,21 +11,21 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="lampiran/cover.jpg" class="d-block w-100" alt="...">
+                    <img src="img/cover.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="lampiran/cover.png" class="d-block w-100" alt="...">
+                    <img src="img/cover.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Second slide label</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="lampiran/cover2.jpg" class="d-block w-100" alt="...">
+                    <img src="img/cover2.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Third slide label</h5>
                         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -45,34 +45,46 @@
 </div>
 <div class="row">
     <!-- colom kiri  -->
-    <div class="col-lg-8">
-        <div class="ibox ">
-            <div class="ibox-title">
+    <div class="col-lg-8 mb-4">
+        <div class="card">
+            <div class="card-header">
                 <h5>Berita Desa</h5>
             </div>
-            <div class="ibox-content">
+            <div class="card-body">
                 <div class="list-group mb-1">
-                    <?php for ($i = 0; $i < 3; $i++) { ?>
-                        <img src="lampiran/cover.jpg">
-                        <span class="list-group-item " href="#">
-                            <a href="#">11 Juni 2020 11:22:04 | SID Gunung Halu</a>
-                            <a href="/detail/1">
-                                <h3 class="list-group-item-heading">
-                                    Pembagian Sembako Paket 1 JPS Gemilang
-                                </h3>
-                            </a>
-                            <p class="">I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
-                        </span>
-                        <hr>
-                    <?php  } ?>
+                    @foreach($data as $p)
+
+                    @if($p->cover === "null")
+                    @else
+                    <img src="upload/{{$p->cover}}">
+                    @endif
+                    <span class="list-group-item " href="#">
+                        <a href="#">{{ $p->created_at }} | {{$p->author}}</a>
+                        <a href="/detail/{{ $p->id }}/{{ $p->slug }}">
+                            <h3 class="list-group-item-heading">
+                                {{$p->title}}
+                            </h3>
+                        </a>
+                        <div class="form-group">
+                            {!! $p->excerpt !!}
+                            <a href="/detail/{{ $p->id }}/{{ $p->slug }}">Baca Selengkapnya</a>
+                        </div>
+                    </span>
+                    <hr>
+                    @endforeach
                 </div>
+                @if($data)
                 <div class="row justify-content-center mb-3">
                     <button class="btn btn-info btn-lg">Tampilkan Semua Berita</button>
                 </div>
+                @else
+                <h3 class="text-center">Tidak ada Berita</h3>
+                @endif
             </div>
         </div>
 
     </div>
+
     <!-- end of colom kiri -->
 
     <!-- colom kanan -->
@@ -168,7 +180,7 @@
                                 <div class="col-lg-3 col-md-6 col-sm-6">
                                     <div class="our-team">
                                         <div class="pic">
-                                            <img src="lampiran/dasep.png">
+                                            <img src="img/dasep.png">
                                         </div>
                                         <div class="team-content">
                                             <h3 class="title">Dasep Depiyawan</h3>

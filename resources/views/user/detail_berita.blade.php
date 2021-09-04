@@ -2,24 +2,24 @@
 
 @section('content')
 
-<div class="row">
+<div class="row  mt-2">
     <!-- colom kiri  -->
     <div class="col-lg-8">
         <div class="card">
-            <div class="card-header">
-                <h5 class="">Posted on {{ $data->date_post }} | <i class="fa fa-user"></i> {{$data->author}}</h5><br>
+            <div class="card-header bg-white">
+                <span class="">Posted on {{ $data->created_at }} | <i class="fa fa-user"></i> {{$data->author}}</span><br>
                 <span>dibaca {{$data->viewer}}x <i class="fa fa-book"></i> </span>
             </div>
             <div class="card-body">
                 <h2>{{ $data->title }}</h2>
                 <div class="form-group text-center">
-                    <img height="300px" width="600px" src="/upload/{{ $data->cover }}" class="img-fluid">
-
+                    <img height="300px" width="300px" src="/upload/{{ $data->cover }}" class="img-fluid">
                 </div>
                 <div class="form-group table-responsive">
-                    <p class="text-right">
+                    <p class="text-left">
                         {!! $data->content !!}
                     </p>
+
                 </div>
                 <div class="btn-group">
                     <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Like this!</button>
@@ -28,38 +28,44 @@
                 </div>
             </div>
         </div>
-        <div class="ibox">
-            <div class="ibox-content">
-                <h3>Tinggalkan Komentar</h3>
 
-                <div class="form-group">
-                    <label>Subject</label>
-                    <input type="email" class="form-control" placeholder="Message subject">
+        <div class="ibox mt-3">
+            <form action="/komentar" method="post">
+                <div class="ibox-content">
+                    <h3>Tinggalkan Komentar</h3>
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        @csrf
+                        <input type="hidden" name="id_post" value="{{ $data->id }}">
+                        <input type="hidden" name="slug" value="{{ $data->slug }}">
+                        <input type="text" required name="name" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="comment" required class="form-control" placeholder="Your message" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-block">Send</button>
                 </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea class="form-control" placeholder="Your message" rows="3"></textarea>
-                </div>
-                <button class="btn btn-primary btn-block">Send</button>
-            </div>
+            </form>
 
             <div class="social-footer">
                 <h4>Komentar <i class="fa fa-comment"></i> </h4>
-                <?php for ($a = 0; $a < 5; $a++) { ?>
-                    <div class="social-comment">
-                        <a href="" class="float-left">
-                            <img alt="image" class="img-rounded" src="img/a1.png">
+                @foreach($comment as $com)
+                <div class="social-comment">
+                    <a href="" class="float-left">
+                        <img alt="image" class="img-rounded" src="/img/user3.png">
+                    </a>
+                    <div class="media-body">
+                        <a href="#">
+                            {{ $com->name }}
                         </a>
-                        <div class="media-body">
-                            <a href="#">
-                                Andrew Williams
-                            </a>
-                            Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.
-                            <br />
-                            <small class="text-muted">12.06.2014</small>
-                        </div>
+                        {{ $com->comment }}
+                        <br />
+                        <small class="text-muted">{{ $com->created_at }}</small>
                     </div>
-                <?php } ?>
+                </div>
+                @endforeach
             </div>
         </div>
 

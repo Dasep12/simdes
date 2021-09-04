@@ -21,6 +21,7 @@ class CreateBeritasTable extends Migration
             $table->string('date_post');
             $table->string('author');
             $table->string('category');
+            $table->longText('excerpt');
             $table->longtext('content');
             $table->smallInteger('viewer');
             $table->timestamps();

@@ -21,7 +21,7 @@ use Symfony\Component\VarDumper\Cloner\Data;
 
 //Route client or user
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/detail/{id}', [HomeController::class, 'detailBerita']);
+Route::get('/detail/{id}/{slug}', [HomeController::class, 'detailBerita']);
 Route::get('/profile', [HomeController::class, 'profile']);
 Route::get('/sejarah', [HomeController::class, 'sejarah']);
 Route::get('/visimisi', [HomeController::class, 'visimisi']);
@@ -32,6 +32,7 @@ Route::get('/wilayah', [HomeController::class, 'wilayah']);
 Route::get('/pendidikan', [HomeController::class, 'pendidikan']);
 Route::get('/jk', [HomeController::class, 'jk']);
 Route::get('/kelumur', [HomeController::class, 'kelumur']);
+Route::post('/komentar', [HomeController::class, 'store_comment']);
 // 
 
 
@@ -89,3 +90,5 @@ Route::get('/admin/berita', [Berita::class, 'index']);
 Route::get('/admin/create_berita', [Berita::class, 'create_berita']);
 Route::post('/admin/create_berita', [Berita::class, 'store_berita']);
 Route::get('/admin/berita/del/{id}', [Berita::class, 'del_berita']);
+Route::get('/admin/berita/edit/{id}', [Berita::class, 'form_edit']);
+Route::post('/admin/update_berita', [Berita::class, 'update_berita']);

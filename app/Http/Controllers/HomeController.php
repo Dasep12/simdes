@@ -2,28 +2,50 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\M_profile;
 use App\Models\M_sejarah;
 use App\Models\M_visimisi;
 use App\Models\M_pemerintah;
 use App\Models\M_Berita;
+use App\Models\M_comment;
 
 class HomeController extends Controller
 {
     //
     public function index()
     {
-        return view('user.home');
+        $data  = [
+            'data'      => M_berita::orderBy('created_at', 'desc')->get(),
+        ];
+        return view('user.home', $data);
     }
 
     //fungsi detail berita
-    public function detailBerita($slug)
+    public function detailBerita($id, $slug)
     {
         $data  = [
-            'data'  => M_berita::find($slug)
+            'data'      => M_berita::where('slug', $slug)->first(),
+            'comment'   => M_comment::where('id_post', $id)->orderBy('id', 'desc')->get()
         ];
         return view('user.detail_berita', $data);
+    }
+
+    //kirim komentar
+    public function store_comment(Request $request)
+    {
+        $validate = $request->validate([
+            'name'          => 'required',
+            'comment'       => 'required',
+            'id_post'       => 'required'
+        ]);
+
+        $validate['id_post'] = $request->id_post;
+        $id = $request->id_post;
+        $slug = $request->slug;
+        M_comment::create($validate);
+        return redirect("/detail" . "/" . $id . '/' . $slug);
     }
 
     // profile desa
