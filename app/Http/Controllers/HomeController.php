@@ -10,6 +10,7 @@ use App\Models\M_visimisi;
 use App\Models\M_pemerintah;
 use App\Models\M_Berita;
 use App\Models\M_comment;
+use App\Models\M_gamas;
 
 class HomeController extends Controller
 {
@@ -18,8 +19,16 @@ class HomeController extends Controller
     {
         $data  = [
             'data'      => M_berita::orderBy('created_at', 'desc')->get(),
+            'gamas'     => M_gamas::all()
         ];
         return view('user.home', $data);
+    }
+
+    //lembaga masyarakat
+    public function gamas_detail($id)
+    {
+        $data = M_gamas::find($id);
+        dd($data);
     }
 
     //fungsi detail berita
@@ -27,7 +36,8 @@ class HomeController extends Controller
     {
         $data  = [
             'data'      => M_berita::where('slug', $slug)->first(),
-            'comment'   => M_comment::where('id_post', $id)->orderBy('id', 'desc')->get()
+            'comment'   => M_comment::where('id_post', $id)->orderBy('id', 'desc')->get(),
+            'gamas'     => M_gamas::all()
         ];
         return view('user.detail_berita', $data);
     }
@@ -54,7 +64,8 @@ class HomeController extends Controller
     {
         $id = 1;
         $data = [
-            'data'  => M_profile::first()
+            'data'  => M_profile::first(),
+            'gamas'     => M_gamas::all()
         ];
         return view('user.profile', $data);
     }
@@ -63,7 +74,8 @@ class HomeController extends Controller
     public function sejarah()
     {
         $data = [
-            'data'  => M_sejarah::first()
+            'data'  => M_sejarah::first(),
+            'gamas'     => M_gamas::all()
         ];
         return view('user.sejarah', $data);
     }
@@ -74,7 +86,8 @@ class HomeController extends Controller
     public function visimisi()
     {
         $data = [
-            'data'  => M_visimisi::first()
+            'data'  => M_visimisi::first(),
+            'gamas'     => M_gamas::all()
         ];
         return view('user.visimisi', $data);
     }
@@ -83,7 +96,8 @@ class HomeController extends Controller
     public function pemerintah()
     {
         $data =  [
-            'data' => M_pemerintah::first()
+            'data' => M_pemerintah::first(),
+            'gamas'     => M_gamas::all()
         ];
         return view('user.pemerintah', $data);
     }
@@ -115,18 +129,32 @@ class HomeController extends Controller
     //halaman pendidikan
     public function pendidikan()
     {
-        return view('user.pendidikan');
+        $data =
+            [
+
+                'gamas'     => M_gamas::all()
+            ];
+        return view('user.pendidikan', $data);
     }
 
     //halaman jenis kelamin
     public function jk()
     {
-        return view('user.jk');
+        $data =
+            [
+
+                'gamas'     => M_gamas::all()
+            ];
+        return view('user.jk', $data);
     }
 
     //halaman kelompok umur
     public function kelumur()
     {
-        return view('user.kelumur');
+        $data =
+            [
+                'gamas'     => M_gamas::all()
+            ];
+        return view('user.kelumur', $data);
     }
 }

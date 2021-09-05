@@ -56,8 +56,9 @@
                             <li class="dropdown">
                                 <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Lembaga Masyarakat</a>
                                 <ul role="menu" class="dropdown-menu">
-                                    <li><a href="/pkk">PKK</a></li>
-                                    <li><a href="/karangtaruna">Karang Taruna</a></li>
+                                    @foreach($gamas as $gam)
+                                    <li><a href="/gamas/detail/{{ $gam->id }}">{{ $gam->namaLembaga }}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="dropdown">
