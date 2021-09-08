@@ -2,19 +2,19 @@
 
 @section('content')
 
-<div class="row mb-5">
-
+<div class="row  mb-5">
     <!-- colom kiri  -->
     <div class="col-lg-8  mb-4">
         <div class="card">
             <div class="card-body">
-                <h2>{{ $data->title }}</h2>
                 <p>Administrator <i class="fa fa-user"></i> </p>
-                <div class="form-group">
-                    <p>
-                        {!! $data->sejarah !!}
-                    </p>
-                </div>
+                <h2 class="">
+                    {{ $data->namaLembaga }}
+                </h2>
+
+                {!! $data->keterangan !!}
+
+
             </div>
         </div>
 

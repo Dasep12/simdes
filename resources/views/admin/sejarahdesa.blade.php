@@ -25,7 +25,7 @@
         <div class="col-lg-12">
             @if(Session('info'))
             <div class="alert alert-info">
-                <p>{{ Session('info') }}}</p>
+                <p>{{ Session('info') }}</p>
             </div>
             @endif
             <div class="ibox ">

@@ -20,13 +20,12 @@
 <body class="">
 
     <div id="wrapper">
-
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element">
-                            <img alt="image" class="rounded-circle" src="/img/profile_small.jpg" />
+                            <img alt="image" width="90" class="rounded-circle" src="/img/user1.png" />
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="block m-t-xs font-bold">Dasep Depiyawan</span>
                                 <span class="text-muted text-xs block">Administrator<b class="caret"></b></span>
