@@ -94,6 +94,13 @@
                         </ul>
                     </li>
                     <li class="
+                     @if(request()->is('admin/produk') || request()->is('admin/produk/add') )
+                        {{ 'active' }}
+                     @endif
+                     ">
+                        <a href="/admin/produk"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Produk Desa</span></a>
+                    </li>
+                    <li class="
                      @if(request()->is('admin/gamas') || request()->is('admin/gamas/add') )
                         {{ 'active' }}
                      @endif
