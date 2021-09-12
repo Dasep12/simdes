@@ -12,9 +12,4 @@ class M_produk extends Model
     ];
 
     protected $table = "tbl_produks";
-
-    public function image()
-    {
-        return $this->hashMany(M_gallery::class, 'foreign_key');
-    }
 }

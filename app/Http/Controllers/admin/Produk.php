@@ -17,8 +17,8 @@ class Produk extends Controller
             'data'   => M_produk::all()
         ];
         // return view('admin.produk', $data);
-        $d = M_produk::find(1)->image();
-        dd($d);
+
+        dd($data);
     }
 
     public function add()
