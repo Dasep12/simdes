@@ -3,13 +3,13 @@
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-4">
-        <h2>Profile Desa</h2>
+        <h2>Produk Desa</h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="/profile">This is</a>
             </li>
             <li class="breadcrumb-item active">
-                <strong>Sejarah Desa</strong>
+                <strong>Produk Desa</strong>
             </li>
         </ol>
     </div>
@@ -23,14 +23,15 @@
 <div class="wrapper wrapper-content">
     <div class="row">
         <div class="col-lg-12">
-            @if(Session('info'))
-            <div class="alert alert-info">
-                <p>{{ Session('info') }}</p>
+            @if(Session('success'))
+            <div class="alert alert-success">
+                <p>{{ Session('success') }}</p>
             </div>
             @endif
+            <a href="/admin/gamas/add" class="btn btn-info mb-2">Tambah Data</a>
             <div class="ibox ">
                 <div class="ibox-title">
-                    <h5>Sejarah Desa</h5>
+                    <h5>Data Produk Desa</h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -44,28 +45,26 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Sejarah</th>
-                                    <th>Author</th>
+                                    <th>Nama Produk</th>
                                     <th>Opsi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $no = 1; ?>
-                                @foreach($sejarah as $p)
+                                @foreach($data as $p)
                                 <tr class="gradeX">
                                     <td><?= $no++ ?></td>
-                                    <td><?= 'Sejarah Desa' ?></td>
-                                    <td><?= 'Administrator' ?></td>
+                                    <td>{{ $p->namaProduk }}</td>
                                     <td>
-                                        <a href="/admin/editSejarah/{{ $p->id }}" class="btn btn-info btn-sm btn-xs">edit</a>
-                                        <a target="_blank" href="/sejarah" class="btn btn-success btn-sm btn-xs">lihat</a>
+                                        <a onclick="return confirm('Yakin Hapus')" href="/admin/produk/del/{{ $p->id }}" class="btn btn-danger btn-sm btn-xs">delete</a>
+                                        <a href="/admin/produk/edit/{{ $p->id }}" class="btn btn-info btn-sm btn-xs">edit</a>
+                                        <a target="_blank" href="/produk" class="btn btn-success btn-sm btn-xs">lihat</a>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>

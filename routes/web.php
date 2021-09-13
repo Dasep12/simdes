@@ -16,6 +16,7 @@ use App\Http\Controllers\admin\DataDesa;
 use App\Http\Controllers\admin\Profile;
 use App\Http\Controllers\admin\Berita;
 use App\Http\Controllers\admin\Gamas;
+use App\Http\Controllers\admin\Produk;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\VarDumper\Cloner\Data;
@@ -102,3 +103,7 @@ Route::post('/admin/gamas/add', [Gamas::class, 'store']);
 Route::get('/admin/gamas/edit/{id}', [Gamas::class, 'edit']);
 Route::post('/admin/gamas/update', [Gamas::class, 'update']);
 Route::get('/admin/gamas/del/{id}', [Gamas::class, 'del']);
+
+
+//Produk Desa
+Route::get('/admin/produk', [Produk::class, 'index']);

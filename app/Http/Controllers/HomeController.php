@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function index()
     {
         $data  = [
-            'data'      => M_berita::orderBy('created_at', 'desc')->get(),
+            'data'      => M_berita::orderBy('updated_at', 'desc')->get(),
             'gamas'     => M_gamas::all()
         ];
         return view('user.home', $data);
@@ -27,9 +27,14 @@ class HomeController extends Controller
     //lembaga masyarakat
     public function gamas_detail($id)
     {
-        $data = M_gamas::find($id);
-        dd($data);
+        $data =  [
+            'data'      => M_gamas::find($id),
+            'gamas'     => M_gamas::all(),
+            'post'      => M_Berita::all()
+        ];
+        return view('user.detail_gamas', $data);
     }
+    //end
 
     //fungsi detail berita
     public function detailBerita($id, $slug)
@@ -104,20 +109,6 @@ class HomeController extends Controller
     //end 
 
 
-    //Lembaga masyarakat
-    //halaman PKK
-    public function pkk()
-    {
-        return view('user.pkk');
-    }
-
-    //halaman karang taruna
-    public function karangtaruna()
-    {
-        return view('user.karang_taruna');
-    }
-    //end
-
 
     //Data desa
     //halaman data wilayah administratif 
@@ -131,7 +122,6 @@ class HomeController extends Controller
     {
         $data =
             [
-
                 'gamas'     => M_gamas::all()
             ];
         return view('user.pendidikan', $data);
