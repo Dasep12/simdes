@@ -15,7 +15,7 @@ class CreateMGalleriesTable extends Migration
     {
         Schema::create('tbl_galleries', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger('id_produk');
+            $table->foreignId('id_produk');
             $table->string('image');
             $table->timestamps();
         });
