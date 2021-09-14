@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\Models\M_gallery;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,13 +15,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD:database/seeders/DatabaseSeeder.php
-        // \App\Models\User::factory(10)->create();
-=======
-        // $this->call(UsersTableSeeder::class);
-        $this->call([
-            UserFactory::class
+        //\App\Models\User::factory(10)->create();
+        //\App\Models\M_gallery::factory(10)->create();
+
+        M_gallery::create([
+            'M_produk_id'  => 11,
+            'image'        => 'dasep.png'
         ]);
->>>>>>> 9fcb29988b3db4b24d558c9aadc21aa590f6ba2c:database/seeds/DatabaseSeeder.php
+
+        M_gallery::create([
+            'M_produk_id'  => 11,
+            'image'        => 'cover.png'
+        ]);
     }
 }

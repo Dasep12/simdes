@@ -11,6 +11,7 @@ use App\Models\M_pemerintah;
 use App\Models\M_Berita;
 use App\Models\M_comment;
 use App\Models\M_gamas;
+use App\Models\M_produk;
 
 class HomeController extends Controller
 {
@@ -19,7 +20,8 @@ class HomeController extends Controller
     {
         $data  = [
             'data'      => M_berita::orderBy('updated_at', 'desc')->get(),
-            'gamas'     => M_gamas::all()
+            'gamas'     => M_gamas::all(),
+            'produk'    => M_produk::all()
         ];
         return view('user.home', $data);
     }
@@ -30,11 +32,24 @@ class HomeController extends Controller
         $data =  [
             'data'      => M_gamas::find($id),
             'gamas'     => M_gamas::all(),
-            'post'      => M_Berita::all()
+            'post'      => M_Berita::all(),
+            'produk'    => M_produk::all()
         ];
         return view('user.detail_gamas', $data);
     }
     //end
+
+    //produk desa
+    public function produk_detail($id)
+    {
+        $data =  [
+            'data'      => M_produk::find($id),
+            'gamas'     => M_gamas::all(),
+            'post'      => M_Berita::all(),
+            'produk'    => M_produk::all()
+        ];
+        return view('user.produk_detail', $data);
+    }
 
     //fungsi detail berita
     public function detailBerita($id, $slug)
@@ -42,7 +57,8 @@ class HomeController extends Controller
         $data  = [
             'data'      => M_berita::where('slug', $slug)->first(),
             'comment'   => M_comment::where('id_post', $id)->orderBy('id', 'desc')->get(),
-            'gamas'     => M_gamas::all()
+            'gamas'     => M_gamas::all(),
+            'produk'    => M_produk::all()
         ];
         return view('user.detail_berita', $data);
     }
@@ -70,7 +86,8 @@ class HomeController extends Controller
         $id = 1;
         $data = [
             'data'  => M_profile::first(),
-            'gamas'     => M_gamas::all()
+            'gamas'     => M_gamas::all(),
+            'produk'    => M_produk::all()
         ];
         return view('user.profile', $data);
     }
@@ -80,7 +97,8 @@ class HomeController extends Controller
     {
         $data = [
             'data'  => M_sejarah::first(),
-            'gamas'     => M_gamas::all()
+            'gamas'     => M_gamas::all(),
+            'produk'    => M_produk::all()
         ];
         return view('user.sejarah', $data);
     }
@@ -92,7 +110,8 @@ class HomeController extends Controller
     {
         $data = [
             'data'  => M_visimisi::first(),
-            'gamas'     => M_gamas::all()
+            'gamas'     => M_gamas::all(),
+            'produk'    => M_produk::all()
         ];
         return view('user.visimisi', $data);
     }
@@ -102,7 +121,8 @@ class HomeController extends Controller
     {
         $data =  [
             'data' => M_pemerintah::first(),
-            'gamas'     => M_gamas::all()
+            'gamas'     => M_gamas::all(),
+            'produk'    => M_produk::all()
         ];
         return view('user.pemerintah', $data);
     }
@@ -114,37 +134,41 @@ class HomeController extends Controller
     //halaman data wilayah administratif 
     public function wilayah()
     {
-        return view('user.wilayah');
+        $data =  [
+            'data' => M_pemerintah::first(),
+            'gamas'     => M_gamas::all(),
+            'produk'    => M_produk::all()
+        ];
+        return view('user.wilayah', $data);
     }
 
     //halaman pendidikan
     public function pendidikan()
     {
-        $data =
-            [
-                'gamas'     => M_gamas::all()
-            ];
+        $data = [
+            'gamas'     => M_gamas::all(),
+            'produk'    => M_produk::all()
+        ];
         return view('user.pendidikan', $data);
     }
 
     //halaman jenis kelamin
     public function jk()
     {
-        $data =
-            [
-
-                'gamas'     => M_gamas::all()
-            ];
+        $data = [
+            'gamas'     => M_gamas::all(),
+            'produk'    => M_produk::all()
+        ];
         return view('user.jk', $data);
     }
 
     //halaman kelompok umur
     public function kelumur()
     {
-        $data =
-            [
-                'gamas'     => M_gamas::all()
-            ];
+        $data = [
+            'gamas'     => M_gamas::all(),
+            'produk'    => M_produk::all()
+        ];
         return view('user.kelumur', $data);
     }
 }
