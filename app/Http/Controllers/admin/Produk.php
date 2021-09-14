@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\M_produk;
 use App\Models\M_gallery;
 use Exception;
@@ -51,9 +52,9 @@ class Produk extends Controller
         } else {
             $save = M_produk::create($validate);
             foreach ($ImgFile as $file) {
-                //  $nameFile = $file->getClientOriginalName();
+                $nameFile = $file->getClientOriginalName();
                 $ext      = $file->extension();
-                $fileUpload = time() . "." . $ext;
+                $fileUpload = md5($nameFile) . "." . $ext;
                 $file->move(public_path('/img/produk/'), $fileUpload);
                 M_gallery::create([
                     'image'             => $fileUpload,
