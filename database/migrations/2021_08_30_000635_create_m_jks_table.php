@@ -13,7 +13,7 @@ class CreateMJksTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_jks', function (Blueprint $table) {
+        Schema::create('jenis_kelamin', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('kelompok');
             $table->string('jumlah');
@@ -30,6 +30,6 @@ class CreateMJksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_jks');
+        Schema::dropIfExists('jenis_kelamin');
     }
 }

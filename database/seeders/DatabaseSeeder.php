@@ -18,14 +18,16 @@ class DatabaseSeeder extends Seeder
         //\App\Models\User::factory(10)->create();
         //\App\Models\M_gallery::factory(10)->create();
 
-        M_gallery::create([
-            'M_produk_id'  => 11,
-            'image'        => 'dasep.png'
-        ]);
+        \App\Models\Pendidikan::factory(20)->create();
 
-        M_gallery::create([
-            'M_produk_id'  => 11,
-            'image'        => 'cover.png'
-        ]);
+        // M_gallery::create([
+        //     'M_produk_id'  => 11,
+        //     'image'        => 'dasep.png'
+        // ]);
+
+        // M_gallery::create([
+        //     'M_produk_id'  => 11,
+        //     'image'        => 'cover.png'
+        // ]);
     }
 }

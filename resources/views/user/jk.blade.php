@@ -20,72 +20,22 @@
                         <table class='table table-bordered table-striped'>
                             <thead>
                                 <tr>
-                                    <th rowspan=2>No</th>
-                                    <th rowspan=2 class='text-left'>Kelompok</th>
-                                    <th colspan=2>Jumlah</th>
-                                    <th colspan=2>Laki-laki</th>
-                                    <th colspan=2>Perempuan</th>
-                                </tr>
-                                <tr>
-                                    <th class='text-right'>n</th>
-                                    <th class='text-right'>%</th>
-                                    <th class='text-right'>n</th>
-                                    <th class='text-right'>%</th>
-                                    <th class='text-right'>n</th>
-                                    <th class='text-right'>%</th>
+                                    <th>No</th>
+                                    <th>Kelompok</th>
+                                    <th>Jumlah</th>
+                                    <th>%</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @php($no=0)
+                                @foreach($data as $p)
+                                @php($no++)
                                 <tr class=''>
-                                    <td class='text-right'>1</td>
-                                    <td>LAKI-LAKI</td>
-                                    <td class='text-right'>1046</td>
-                                    <td class='text-right'>52.46%</td>
-                                    <td class='text-right'>1046</td>
-                                    <td class='text-right'>52.46%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>2</td>
-                                    <td>PEREMPUAN</td>
-                                    <td class='text-right'>948</td>
-                                    <td class='text-right'>47.54%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>948</td>
-                                    <td class='text-right'>47.54%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'></td>
-                                    <td>JUMLAH</td>
-                                    <td class='text-right'>1994</td>
-                                    <td class='text-right'>100.00%</td>
-                                    <td class='text-right'>1046</td>
-                                    <td class='text-right'>52.46%</td>
-                                    <td class='text-right'>948</td>
-                                    <td class='text-right'>47.54%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'></td>
-                                    <td>BELUM MENGISI</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'></td>
-                                    <td>TOTAL</td>
-                                    <td class='text-right'>1994</td>
-                                    <td class='text-right'>100%</td>
-                                    <td class='text-right'>1046</td>
-                                    <td class='text-right'>52.46%</td>
-                                    <td class='text-right'>948</td>
-                                    <td class='text-right'>47.54%</td>
-                                </tr>
+                                    <td class='text-right'>{{$no}}</td>
+                                    <td>{{$p->kelompok}}</td>
+                                    <td class='text-right'>{{ $p->jumlah }}</td>
+                                    <td class='text-right'>{{ $p->jumlah . " %" }}</td>
+                                    @endforeach
                             </tbody>
                         </table>
                     </div>

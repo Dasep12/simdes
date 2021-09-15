@@ -13,7 +13,7 @@ class CreateMUmursTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_umurs', function (Blueprint $table) {
+        Schema::create('tbl_umurs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('kelompok');
             $table->string('perempuan');
@@ -29,6 +29,6 @@ class CreateMUmursTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_umurs');
+        Schema::dropIfExists('tbl_umurs');
     }
 }

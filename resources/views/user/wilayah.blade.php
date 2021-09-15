@@ -18,87 +18,27 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Dusun</th>
-                                <th>Nama Kepala Dusun</th>
+                                <th>Nama Daerah</th>
                                 <th>Jumlah RT</th>
                                 <th>Jumlah KK</th>
-                                <th>Jiwa</th>
-                                <th>Lk</th>
-                                <th>Pr</th>
+                                <th>Jumlah Jiwa</th>
+                                <th>Laki Laki</th>
+                                <th>Perempuan</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $no =  1; ?>
+                            @foreach($data as $w)
                             <tr>
-                                <td>1</td>
-                                <td>BUNGKIL</td>
-                                <td>I WAYAN LINGGIH</td>
-                                <td class='text-right'>0</td>
-                                <td class='text-right'>89</td>
-                                <td class='text-right'>316</td>
-                                <td class='text-right'>172</td>
-                                <td class='text-right'>144</td>
+                                <td><?= $no++ ?></td>
+                                <td>{{ $w->daerah }}</td>
+                                <td>{{ $w->jumlah_rt }}</td>
+                                <td class='text-right'>{{ $w->jumlah_kk }}</td>
+                                <td class='text-right'>{{ $w->jumlah_jiwa }}</td>
+                                <td class='text-right'>{{ $w->laki_laki }}</td>
+                                <td class='text-right'>{{ $w->perempuan }}</td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>DLUNDUNGAN</td>
-                                <td>I KADEK YUDANA</td>
-                                <td class='text-right'>0</td>
-                                <td class='text-right'>100</td>
-                                <td class='text-right'>332</td>
-                                <td class='text-right'>181</td>
-                                <td class='text-right'>151</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>RAMUAN</td>
-                                <td>I NYOMAN MURDANA</td>
-                                <td class='text-right'>0</td>
-                                <td class='text-right'>66</td>
-                                <td class='text-right'>214</td>
-                                <td class='text-right'>113</td>
-                                <td class='text-right'>101</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>SEDEHING</td>
-                                <td>I MADE SUARTA</td>
-                                <td class='text-right'>0</td>
-                                <td class='text-right'>125</td>
-                                <td class='text-right'>465</td>
-                                <td class='text-right'>240</td>
-                                <td class='text-right'>225</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>SEKARTAJI</td>
-                                <td>I KOMANG SUKADANA</td>
-                                <td class='text-right'>0</td>
-                                <td class='text-right'>134</td>
-                                <td class='text-right'>527</td>
-                                <td class='text-right'>268</td>
-                                <td class='text-right'>259</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>TABUANAN</td>
-                                <td>I WAYAN GATA</td>
-                                <td class='text-right'>0</td>
-                                <td class='text-right'>47</td>
-                                <td class='text-right'>140</td>
-                                <td class='text-right'>72</td>
-                                <td class='text-right'>68</td>
-                            </tr>
-                        </tbody>
-                        <tfooter>
-                            <tr>
-                                <th colspan=3 class='text-right'>TOTAL</th>
-                                <th class='text-right'>0</th>
-                                <th class='text-right'>561</th>
-                                <th class='text-right'>1994</th>
-                                <th class='text-right'>1046</th>
-                                <th class='text-right'>948</th>
-                            </tr>
-                        </tfooter>
+                            @endforeach
                     </table>
                 </div>
 

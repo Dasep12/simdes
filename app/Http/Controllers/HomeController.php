@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Administratif;
+use App\Models\Jk;
 use Illuminate\Http\Request;
 use App\Models\M_profile;
 use App\Models\M_sejarah;
@@ -11,7 +12,9 @@ use App\Models\M_pemerintah;
 use App\Models\M_Berita;
 use App\Models\M_comment;
 use App\Models\M_gamas;
+use App\Models\Pendidikan;
 use App\Models\M_produk;
+use App\Models\Umur;
 
 class HomeController extends Controller
 {
@@ -135,9 +138,9 @@ class HomeController extends Controller
     public function wilayah()
     {
         $data =  [
-            'data' => M_pemerintah::first(),
+            'data'      => Administratif::all(),
             'gamas'     => M_gamas::all(),
-            'produk'    => M_produk::all()
+            'produk'    => M_produk::all(),
         ];
         return view('user.wilayah', $data);
     }
@@ -147,7 +150,8 @@ class HomeController extends Controller
     {
         $data = [
             'gamas'     => M_gamas::all(),
-            'produk'    => M_produk::all()
+            'produk'    => M_produk::all(),
+            'data'      => Pendidikan::all()
         ];
         return view('user.pendidikan', $data);
     }
@@ -157,7 +161,8 @@ class HomeController extends Controller
     {
         $data = [
             'gamas'     => M_gamas::all(),
-            'produk'    => M_produk::all()
+            'produk'    => M_produk::all(),
+            'data'      => Jk::all()
         ];
         return view('user.jk', $data);
     }
@@ -167,7 +172,8 @@ class HomeController extends Controller
     {
         $data = [
             'gamas'     => M_gamas::all(),
-            'produk'    => M_produk::all()
+            'produk'    => M_produk::all(),
+            'data'      => Umur::all()
         ];
         return view('user.kelumur', $data);
     }

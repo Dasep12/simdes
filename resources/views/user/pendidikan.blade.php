@@ -22,9 +22,9 @@
                                 <tr>
                                     <th rowspan=2>No</th>
                                     <th rowspan=2 class='text-left'>Kelompok</th>
-                                    <th colspan=2>Jumlah</th>
-                                    <th colspan=2>Laki-laki</th>
-                                    <th colspan=2>Perempuan</th>
+                                    <th class="text-center" colspan=2>Jumlah</th>
+                                    <th class="text-center" colspan=2>Laki-laki</th>
+                                    <th class="text-center" colspan=2>Perempuan</th>
                                 </tr>
                                 <tr>
                                     <th class='text-right'>n</th>
@@ -36,136 +36,20 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @php($no = 0)
+                                @foreach($data as $p)
+                                @php($no++)
                                 <tr class=''>
-                                    <td class='text-right'>1</td>
-                                    <td>TIDAK / BELUM SEKOLAH</td>
-                                    <td class='text-right'>0</td>
+                                    <td class='text-right'>{{ $no }}</td>
+                                    <td>{{ $p->kelompok }}</td>
+                                    <td class='text-right'>{{ $p->jumlah }}</td>
                                     <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
+                                    <td class='text-right'>{{ $p->laki_laki }}</td>
                                     <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>2</td>
-                                    <td>BELUM TAMAT SD/SEDERAJAT</td>
-                                    <td class='text-right'>1522</td>
-                                    <td class='text-right'>76.33%</td>
-                                    <td class='text-right'>741</td>
-                                    <td class='text-right'>37.16%</td>
-                                    <td class='text-right'>781</td>
-                                    <td class='text-right'>39.17%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>3</td>
-                                    <td>TAMAT SD / SEDERAJAT</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
+                                    <td class='text-right'>{{ $p->perempuan }}</td>
                                     <td class='text-right'>0.00%</td>
                                 </tr>
-                                <tr class=''>
-                                    <td class='text-right'>4</td>
-                                    <td>SLTP/SEDERAJAT</td>
-                                    <td class='text-right'>192</td>
-                                    <td class='text-right'>9.63%</td>
-                                    <td class='text-right'>116</td>
-                                    <td class='text-right'>5.82%</td>
-                                    <td class='text-right'>76</td>
-                                    <td class='text-right'>3.81%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>5</td>
-                                    <td>SLTA / SEDERAJAT</td>
-                                    <td class='text-right'>198</td>
-                                    <td class='text-right'>9.93%</td>
-                                    <td class='text-right'>133</td>
-                                    <td class='text-right'>6.67%</td>
-                                    <td class='text-right'>65</td>
-                                    <td class='text-right'>3.26%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>6</td>
-                                    <td>DIPLOMA I / II</td>
-                                    <td class='text-right'>24</td>
-                                    <td class='text-right'>1.20%</td>
-                                    <td class='text-right'>17</td>
-                                    <td class='text-right'>0.85%</td>
-                                    <td class='text-right'>7</td>
-                                    <td class='text-right'>0.35%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>7</td>
-                                    <td>AKADEMI/ DIPLOMA III/S. MUDA</td>
-                                    <td class='text-right'>11</td>
-                                    <td class='text-right'>0.55%</td>
-                                    <td class='text-right'>5</td>
-                                    <td class='text-right'>0.25%</td>
-                                    <td class='text-right'>6</td>
-                                    <td class='text-right'>0.30%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>8</td>
-                                    <td>DIPLOMA IV/ STRATA I</td>
-                                    <td class='text-right'>46</td>
-                                    <td class='text-right'>2.31%</td>
-                                    <td class='text-right'>34</td>
-                                    <td class='text-right'>1.71%</td>
-                                    <td class='text-right'>12</td>
-                                    <td class='text-right'>0.60%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>9</td>
-                                    <td>STRATA II</td>
-                                    <td class='text-right'>1</td>
-                                    <td class='text-right'>0.05%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>1</td>
-                                    <td class='text-right'>0.05%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>10</td>
-                                    <td>STRATA III</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'></td>
-                                    <td>JUMLAH</td>
-                                    <td class='text-right'>1994</td>
-                                    <td class='text-right'>100.00%</td>
-                                    <td class='text-right'>1046</td>
-                                    <td class='text-right'>52.46%</td>
-                                    <td class='text-right'>948</td>
-                                    <td class='text-right'>47.54%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'></td>
-                                    <td>BELUM MENGISI</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'></td>
-                                    <td>TOTAL</td>
-                                    <td class='text-right'>1994</td>
-                                    <td class='text-right'>100%</td>
-                                    <td class='text-right'>1046</td>
-                                    <td class='text-right'>52.46%</td>
-                                    <td class='text-right'>948</td>
-                                    <td class='text-right'>47.54%</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table><button class='btn btn-xs btn-success' id='showData'>Selengkapnya...</button>
                     </div>

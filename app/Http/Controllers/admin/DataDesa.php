@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Administratif;
 use App\Models\M_pemerintah;
-use App\Models\M_jk;
-use App\Models\M_pendidikan;
-use App\Models\M_umur;
+use App\Models\Jk;
+use App\Models\Pendidikan;
+use App\Models\Umur;
 
 class DataDesa extends Controller
 {
@@ -108,7 +108,7 @@ class DataDesa extends Controller
     {
         $data = [
             'title' => 'Data Jenis Kelamin',
-            'data' => M_jk::all()
+            'data' => Jk::all()
         ];
         return view('admin.jk', $data);
     }
@@ -134,7 +134,7 @@ class DataDesa extends Controller
         $validate['belum_isi']  = $request->belum_isi;
         $validate['author']     = $request->author;
 
-        M_jk::create($validate);
+        Jk::create($validate);
         return redirect('/admin/jk/add')->with('info', 'Data di Tambah');
     }
 
@@ -142,7 +142,7 @@ class DataDesa extends Controller
     {
         $data = [
             'title'  => 'Edit Data',
-            'data'   => M_jk::find($id)
+            'data'   => Jk::find($id)
         ];
         return view('admin.jk_edit', $data);
     }
@@ -158,7 +158,7 @@ class DataDesa extends Controller
             'jumlah.required'   => 'data harus di isi'
         ]);
 
-        $data = M_jk::find($request->id);
+        $data = Jk::find($request->id);
         $data->kelompok = $request->kelompok;
         $data->jumlah   = $request->jumlah;
         $data->update();
@@ -167,7 +167,7 @@ class DataDesa extends Controller
 
     public function del_jk($id)
     {
-        $data = M_jk::find($id);
+        $data = Jk::find($id);
         $data->delete();
         return redirect('/admin/jk')->with('success', 'Data Berhasil di Hapus');
     }
@@ -178,7 +178,7 @@ class DataDesa extends Controller
     {
         $data = [
             'title'  => 'Data Kelompok Umur',
-            'data'   => M_umur::all()
+            'data'   => Umur::all()
         ];
         return view('admin.umur', $data);
     }
@@ -193,7 +193,7 @@ class DataDesa extends Controller
     public function store_umur(Request $request)
     {
         $validate = $request->validate([
-            'kelompok'    => 'required|unique:m_umurs',
+            'kelompok'    => 'required|unique:tbl_umurs',
             'laki_laki'   => 'required',
             'perempuan'   => 'required'
         ], [
@@ -203,7 +203,7 @@ class DataDesa extends Controller
             'kelompok.unique'     => 'kelompok sudah terisi'
         ]);
 
-        M_umur::create($validate);
+        Umur::create($validate);
         return redirect('/admin/umur')->with('success', 'Data Berhasil di tambah');
     }
 
@@ -211,7 +211,7 @@ class DataDesa extends Controller
     {
         $data = [
             'title'  => 'Edit Data',
-            'data'   => M_umur::find($id)
+            'data'   => Umur::find($id)
         ];
         return view('admin.umur_edit', $data);
     }
@@ -228,7 +228,7 @@ class DataDesa extends Controller
             'perempuan.required'  => 'harus di isi ',
         ]);
 
-        $data = M_umur::find($request->id);
+        $data = Umur::find($request->id);
         $data->kelompok = $request->kelompok;
         $data->laki_laki = $request->laki_laki;
         $data->perempuan = $request->perempuan;
@@ -237,7 +237,7 @@ class DataDesa extends Controller
     }
     public function del_umur($id)
     {
-        $data = M_umur::find($id);
+        $data = Umur::find($id);
         $data->delete();
         return redirect('/admin/umur')->with('success', 'Data Berhasil di Hapus');
     }
@@ -248,7 +248,7 @@ class DataDesa extends Controller
     {
         $data = [
             'title' => 'Data Pendidikan',
-            'data'  => M_pendidikan::all()
+            'data'  => Pendidikan::all()
         ];
         return view('admin.pendidikan', $data);
     }
@@ -265,7 +265,7 @@ class DataDesa extends Controller
     public function store_pendidikan(Request $request)
     {
         $validate = $request->validate([
-            'kelompok'    => 'required|unique:m_pendidikans',
+            'kelompok'    => 'required|unique:Pendidikans',
             'laki_laki'   => 'required|numeric',
             'perempuan'   => 'required|numeric',
         ], [
@@ -280,7 +280,7 @@ class DataDesa extends Controller
         $validate['author']  = 'Administrator';
         $validate['jumlah']  = $request->laki_laki + $request->perempuan;
 
-        M_pendidikan::create($validate);
+        Pendidikan::create($validate);
         return redirect('admin/pendidikan')->with('success', 'Data Berhasil di tambah');
     }
 
@@ -288,14 +288,14 @@ class DataDesa extends Controller
     {
         $data = [
             'title'  => 'Data Pendidikan',
-            'data'   => M_pendidikan::find($id)
+            'data'   => Pendidikan::find($id)
         ];
         return view('admin.pendidikan_edit', $data);
     }
 
     public function update_pendidikan(Request $request)
     {
-        $data = M_pendidikan::find($request->id);
+        $data = Pendidikan::find($request->id);
         $data->kelompok = $request->kelompok;
         $data->laki_laki = $request->laki_laki;
         $data->perempuan = $request->perempuan;
@@ -306,7 +306,7 @@ class DataDesa extends Controller
 
     public function del_pendidikan($id)
     {
-        $data = M_pendidikan::find($id);
+        $data = Pendidikan::find($id);
         $data->delete();
         return redirect('admin/pendidikan')->with('success', 'Data Berhasil di Hapus');
     }
