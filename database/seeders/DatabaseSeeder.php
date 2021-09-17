@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
         //\App\Models\User::factory(10)->create();
         //\App\Models\M_gallery::factory(10)->create();
 
-        \App\Models\Pendidikan::factory(20)->create();
+        //\App\Models\Pendidikan::factory(20)->create();
+        \App\Models\Count::factory(5)->create();
 
         // M_gallery::create([
         //     'M_produk_id'  => 11,

@@ -2,17 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\M_berita;
 
-class M_comment extends Model
+class Count extends Model
 {
-    //
-    protected $fillable = [
-        'comment', 'name', 'm_berita_id'
-    ];
+    use HasFactory;
 
-    protected $table = "tbl_comment";
 
     public function berita()
     {

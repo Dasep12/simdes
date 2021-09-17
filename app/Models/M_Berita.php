@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\M_comment;
+use App\Models\Count;
 
 class M_berita extends Model
 {
@@ -13,4 +15,14 @@ class M_berita extends Model
     ];
 
     protected $table = "Beritas";
+
+    public function comment()
+    {
+        return $this->hasMany(M_comment::class);
+    }
+
+    public function views()
+    {
+        return $this->hasMany(Count::class);
+    }
 }

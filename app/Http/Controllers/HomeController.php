@@ -58,12 +58,15 @@ class HomeController extends Controller
     public function detailBerita($id, $slug)
     {
         $data  = [
-            'data'      => M_berita::where('slug', $slug)->first(),
-            'comment'   => M_comment::where('id_post', $id)->orderBy('id', 'desc')->get(),
+            // 'data'      => M_berita::where('slug', $slug)->first(),
+            // 'comment'   => M_comment::where('id_post', $id)->orderBy('id', 'desc')->get(),
+            'data'      => M_Berita::find($id),
             'gamas'     => M_gamas::all(),
+            'berita'    => M_Berita::all(),
             'produk'    => M_produk::all()
         ];
         return view('user.detail_berita', $data);
+        //  echo Request::ip();
     }
 
     //kirim komentar
@@ -72,11 +75,12 @@ class HomeController extends Controller
         $validate = $request->validate([
             'name'          => 'required',
             'comment'       => 'required',
-            'id_post'       => 'required'
+            'm_berita_id'   => 'required'
         ]);
 
-        $validate['id_post'] = $request->id_post;
-        $id = $request->id_post;
+        $validate['m_berita_id'] = $request->m_berita_id;
+
+        $id = $request->m_berita_id;
         $slug = $request->slug;
         M_comment::create($validate);
         return redirect("/detail" . "/" . $id . '/' . $slug);

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMCommentsTable extends Migration
+class CreateMProduksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateMCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_comment', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->foreignId('m_berita_id');
-            $table->string('name');
-            $table->longText('comment');
+        Schema::create('tbl_produks', function (Blueprint $table) {
+            $table->id();
+            $table->string('namaProduk');
+            $table->smallInteger('idProduk')->unique();
+            $table->longText('deskripsi');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateMCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_comment');
+        Schema::dropIfExists('tbl_produks');
     }
 }

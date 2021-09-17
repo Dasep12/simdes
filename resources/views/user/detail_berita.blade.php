@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-header bg-white">
                 <span class="">Posted on {{ $data->created_at }} | <i class="fa fa-user"></i> {{$data->author}}</span><br>
-                <span>dibaca {{$data->viewer}}x <i class="fa fa-book"></i> </span>
+                <span>dibaca {{$data->views->count() }}x <i class="fa fa-book"></i> </span>
             </div>
             <div class="card-body">
                 <h2>{{ $data->title }}</h2>
@@ -30,14 +30,14 @@
         </div>
 
         <div class="ibox mt-3">
-            <form action="/komentar" method="post">
+            <form action="/komentar" name="komentar" method="post">
                 <div class="ibox-content">
                     <h3>Tinggalkan Komentar</h3>
 
                     <div class="form-group">
                         <label>Name</label>
                         @csrf
-                        <input type="hidden" name="id_post" value="{{ $data->id }}">
+                        <input type="hidden" name="m_berita_id" value="{{ $data->id }}">
                         <input type="hidden" name="slug" value="{{ $data->slug }}">
                         <input type="text" required name="name" class="form-control" placeholder="Your Name">
                     </div>
@@ -45,13 +45,13 @@
                         <label>Message</label>
                         <textarea name="comment" required class="form-control" placeholder="Your message" rows="3"></textarea>
                     </div>
-                    <button class="btn btn-primary btn-block">Send</button>
+                    <button type="submit" class="btn btn-primary btn-block">Send</button>
                 </div>
             </form>
 
             <div class="social-footer">
                 <h4>Komentar <i class="fa fa-comment"></i> </h4>
-                @foreach($comment as $com)
+                @foreach($data->comment as $com)
                 <div class="social-comment">
                     <a href="" class="float-left">
                         <img alt="image" class="img-rounded" src="/img/user3.png">
@@ -148,39 +148,39 @@
         </h2>
 
         <div class="slick_demo_2">
-            <?php for ($c = 0; $c < 5; $c++) { ?>
-                <div>
-                    <div class="ibox">
-                        <div class="ibox-content">
-                            <a href="article.html" class="btn-link">
-                                <h2>
-                                    One morning, when Gregor Samsa
-                                </h2>
-                            </a>
-                            <div class="small m-b-xs">
-                                <strong>Adam Novak</strong> <span class="text-muted"><i class="fa fa-clock-o"></i> 28th Oct 2015</span>
+            @foreach($berita as $brt)
+            <div>
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <a href="/detail/{{ $brt->m_berita_id }}/{{ $data->slug }}" class="btn-link">
+                            <h2>
+                                {{$brt->title}}
+                            </h2>
+                        </a>
+                        <div class="small m-b-xs">
+                            <strong>{{$brt->author}}</strong> <span class="text-muted"><i class="fa fa-clock-o"></i> {{$brt->date_post}}</span>
+                        </div>
+                        <p>
+                            {!! $brt->excerpt !!}
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Tags:</h5>
+                                <button class="btn btn-primary btn-xs" type="button">Model</button>
+                                <button class="btn btn-white btn-xs" type="button">Publishing</button>
                             </div>
-                            <p>
-                                English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web
-                            </p>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h5>Tags:</h5>
-                                    <button class="btn btn-primary btn-xs" type="button">Model</button>
-                                    <button class="btn btn-white btn-xs" type="button">Publishing</button>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="small text-right">
-                                        <h5>Stats:</h5>
-                                        <div> <i class="fa fa-comments-o"> </i> 56 comments </div>
-                                        <i class="fa fa-eye"> </i> 144 views
-                                    </div>
+                            <div class="col-md-6">
+                                <div class="small text-right">
+                                    <h5>Stats:</h5>
+                                    <div> <i class="fa fa-comments-o"> </i> {{ $brt->comment->count() }} comments </div>
+                                    <i class="fa fa-eye"> </i> 144 views
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <?php  } ?>
+            </div>
+            @endforeach
         </div>
     </div>
 </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMProduksTable extends Migration
+class CreateCountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateMProduksTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_produks', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('namaProduk')->nullable();
-            $table->smallInteger('idProduk')->nullable();
-            $table->longText('deskripsi');
+        Schema::create('counts', function (Blueprint $table) {
+            $table->id();
+            $table->string('ip');
+            $table->foreignId('m_berita_id');
+            $table->timestamp('tanggal');
+            $table->smallInteger('view');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateMProduksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_produks');
+        Schema::dropIfExists('counts');
     }
 }
