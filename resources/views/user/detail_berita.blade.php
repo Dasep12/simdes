@@ -152,7 +152,7 @@
             <div>
                 <div class="ibox">
                     <div class="ibox-content">
-                        <a href="/detail/{{ $data->id }}/{{ $data->slug }}" class="btn-link">
+                        <a href="/detail/{{ $brt->m_berita_id }}/{{ $data->slug }}" class="btn-link">
                             <h2>
                                 {{$brt->title}}
                             </h2>
