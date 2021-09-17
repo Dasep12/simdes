@@ -2,62 +2,37 @@
 
 @section('content')
 
-<div class="row">
+<div class="row  mb-5">
     <!-- colom kiri  -->
-    <div class="col-lg-8 mb-3">
-        <div class="card">
+    <div class="col-lg-8  mb-4">
+        <div class="card mb-3">
             <div class="card-body">
                 <p>Administrator <i class="fa fa-user"></i> </p>
                 <h2 class="">
-                    DATA PENDIDIKAN
+                    {{ $data->namaProduk }}
                 </h2>
-                <h2 class='text-title mt0'><strong>Demografi Berdasar Pendidikan Dalam KK</strong></h2>
-                <div class='mt20'>
-                    <h3 class='text-title mt0'><strong>Tabel Data</strong></h3>
-                </div>
-                <div>
-                    <div class='table-responsive'>
-                        <table class='table table-bordered table-striped'>
-                            <thead>
-                                <tr>
-                                    <th rowspan=2>No</th>
-                                    <th rowspan=2 class='text-left'>Kelompok</th>
-                                    <th class="text-center" colspan=2>Jumlah</th>
-                                    <th class="text-center" colspan=2>Laki-laki</th>
-                                    <th class="text-center" colspan=2>Perempuan</th>
-                                </tr>
-                                <tr>
-                                    <th class='text-right'>n</th>
-                                    <th class='text-right'>%</th>
-                                    <th class='text-right'>n</th>
-                                    <th class='text-right'>%</th>
-                                    <th class='text-right'>n</th>
-                                    <th class='text-right'>%</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @php($no = 0)
-                                @foreach($data as $p)
-                                @php($no++)
-                                <tr class=''>
-                                    <td class='text-right'>{{ $no }}</td>
-                                    <td>{{ $p->kelompok }}</td>
-                                    <td class='text-right'>{{ $p->jumlah }}</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>{{ $p->laki_laki }}</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>{{ $p->perempuan }}</td>
-                                    <td class='text-right'>0.00%</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table><button class='btn btn-xs btn-success' id='showData'>Selengkapnya...</button>
-                    </div>
+                <div class="form-group text-left">
+                    {!! $data->deskripsi !!}
                 </div>
             </div>
         </div>
 
+        @if($data->gallery->count() > 0)
+        <div class="card">
+            <h2 class="text-center">Gambar Produk</h2>
+            <div class="card-body">
+                <div class="row">
+                    @foreach($data->gallery as $glr)
+                    <div class="col-lg-5  mb-4 mb-lg-0">
+                        <img src="/img/produk/{{ $glr->image }}" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        @endif
     </div>
+
     <!-- end of colom kiri -->
 
     <!-- colom kanan -->

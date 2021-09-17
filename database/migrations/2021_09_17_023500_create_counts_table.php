@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMUmursTable extends Migration
+class CreateCountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateMUmursTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_umurs', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('kelompok');
-            $table->string('perempuan');
-            $table->string('laki_laki');
+        Schema::create('counts', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateMUmursTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_umurs');
+        Schema::dropIfExists('counts');
     }
 }

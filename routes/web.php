@@ -36,6 +36,7 @@ Route::get('/jk', [HomeController::class, 'jk']);
 Route::get('/kelumur', [HomeController::class, 'kelumur']);
 Route::post('/komentar', [HomeController::class, 'store_comment']);
 Route::get('/gamas/detail/{id}', [HomeController::class, 'gamas_detail']);
+Route::get('/produk/info/{id}', [HomeController::class, 'produk_detail']);
 // 
 
 
@@ -107,3 +108,8 @@ Route::get('/admin/gamas/del/{id}', [Gamas::class, 'del']);
 
 //Produk Desa
 Route::get('/admin/produk', [Produk::class, 'index']);
+Route::get('/admin/produk/add', [Produk::class, 'add']);
+Route::post('/admin/produk/add', [Produk::class, 'store']);
+Route::get('/admin/produk/edit/{id}', [Produk::class, 'edit']);
+Route::post('/admin/produk/update', [Produk::class, 'update']);
+Route::get('/admin/produk/del/{id}', [Produk::class, 'del']);

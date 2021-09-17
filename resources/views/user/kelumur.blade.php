@@ -36,196 +36,21 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @php($no = 0 )
+                                @foreach($data as $p)
+                                @php($no++)
+                                @php($total = $p->laki_laki + $p->perempuan)
                                 <tr class=''>
-                                    <td class='text-right'>1</td>
-                                    <td>Di bawah 1 Tahun</td>
-                                    <td class='text-right'>1</td>
+                                    <td class='text-right'>{{ $no }}</td>
+                                    <td>{{ $p->kelompok }}</td>
+                                    <td class='text-right'>{{ $total }}</td>
                                     <td class='text-right'>0.05%</td>
-                                    <td class='text-right'>1</td>
+                                    <td class='text-right'>{{$p->laki_laki}}</td>
                                     <td class='text-right'>0.05%</td>
-                                    <td class='text-right'>0</td>
+                                    <td class='text-right'>{{$p->perempuan}}</td>
                                     <td class='text-right'>0.00%</td>
                                 </tr>
-                                <tr class=''>
-                                    <td class='text-right'>2</td>
-                                    <td>2 s/d 4 Tahun</td>
-                                    <td class='text-right'>27</td>
-                                    <td class='text-right'>1.35%</td>
-                                    <td class='text-right'>16</td>
-                                    <td class='text-right'>0.80%</td>
-                                    <td class='text-right'>11</td>
-                                    <td class='text-right'>0.55%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>3</td>
-                                    <td>5 s/d 9 Tahun</td>
-                                    <td class='text-right'>51</td>
-                                    <td class='text-right'>2.56%</td>
-                                    <td class='text-right'>33</td>
-                                    <td class='text-right'>1.65%</td>
-                                    <td class='text-right'>18</td>
-                                    <td class='text-right'>0.90%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>4</td>
-                                    <td>10 s/d 14 Tahun</td>
-                                    <td class='text-right'>71</td>
-                                    <td class='text-right'>3.56%</td>
-                                    <td class='text-right'>41</td>
-                                    <td class='text-right'>2.06%</td>
-                                    <td class='text-right'>30</td>
-                                    <td class='text-right'>1.50%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>5</td>
-                                    <td>15 s/d 19 Tahun</td>
-                                    <td class='text-right'>89</td>
-                                    <td class='text-right'>4.46%</td>
-                                    <td class='text-right'>46</td>
-                                    <td class='text-right'>2.31%</td>
-                                    <td class='text-right'>43</td>
-                                    <td class='text-right'>2.16%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>6</td>
-                                    <td>20 s/d 24 Tahun</td>
-                                    <td class='text-right'>78</td>
-                                    <td class='text-right'>3.91%</td>
-                                    <td class='text-right'>35</td>
-                                    <td class='text-right'>1.76%</td>
-                                    <td class='text-right'>43</td>
-                                    <td class='text-right'>2.16%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>7</td>
-                                    <td>25 s/d 29 Tahun</td>
-                                    <td class='text-right'>90</td>
-                                    <td class='text-right'>4.51%</td>
-                                    <td class='text-right'>49</td>
-                                    <td class='text-right'>2.46%</td>
-                                    <td class='text-right'>41</td>
-                                    <td class='text-right'>2.06%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>8</td>
-                                    <td>30 s/d 34 Tahun</td>
-                                    <td class='text-right'>60</td>
-                                    <td class='text-right'>3.01%</td>
-                                    <td class='text-right'>39</td>
-                                    <td class='text-right'>1.96%</td>
-                                    <td class='text-right'>21</td>
-                                    <td class='text-right'>1.05%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>9</td>
-                                    <td>35 s/d 39 Tahun </td>
-                                    <td class='text-right'>84</td>
-                                    <td class='text-right'>4.21%</td>
-                                    <td class='text-right'>45</td>
-                                    <td class='text-right'>2.26%</td>
-                                    <td class='text-right'>39</td>
-                                    <td class='text-right'>1.96%</td>
-                                </tr>
-                                <tr class=''>
-                                    <td class='text-right'>10</td>
-                                    <td>40 s/d 44 Tahun</td>
-                                    <td class='text-right'>51</td>
-                                    <td class='text-right'>2.56%</td>
-                                    <td class='text-right'>30</td>
-                                    <td class='text-right'>1.50%</td>
-                                    <td class='text-right'>21</td>
-                                    <td class='text-right'>1.05%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'>11</td>
-                                    <td>45 s/d 49 Tahun</td>
-                                    <td class='text-right'>60</td>
-                                    <td class='text-right'>3.01%</td>
-                                    <td class='text-right'>29</td>
-                                    <td class='text-right'>1.45%</td>
-                                    <td class='text-right'>31</td>
-                                    <td class='text-right'>1.55%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'>12</td>
-                                    <td>50 s/d 54 Tahun</td>
-                                    <td class='text-right'>1119</td>
-                                    <td class='text-right'>56.12%</td>
-                                    <td class='text-right'>576</td>
-                                    <td class='text-right'>28.89%</td>
-                                    <td class='text-right'>543</td>
-                                    <td class='text-right'>27.23%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'>13</td>
-                                    <td>55 s/d 59 Tahun</td>
-                                    <td class='text-right'>45</td>
-                                    <td class='text-right'>2.26%</td>
-                                    <td class='text-right'>28</td>
-                                    <td class='text-right'>1.40%</td>
-                                    <td class='text-right'>17</td>
-                                    <td class='text-right'>0.85%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'>14</td>
-                                    <td>60 s/d 64 Tahun</td>
-                                    <td class='text-right'>19</td>
-                                    <td class='text-right'>0.95%</td>
-                                    <td class='text-right'>7</td>
-                                    <td class='text-right'>0.35%</td>
-                                    <td class='text-right'>12</td>
-                                    <td class='text-right'>0.60%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'>15</td>
-                                    <td>65 s/d 69 Tahun</td>
-                                    <td class='text-right'>25</td>
-                                    <td class='text-right'>1.25%</td>
-                                    <td class='text-right'>13</td>
-                                    <td class='text-right'>0.65%</td>
-                                    <td class='text-right'>12</td>
-                                    <td class='text-right'>0.60%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'>16</td>
-                                    <td>70 s/d 74 Tahun</td>
-                                    <td class='text-right'>28</td>
-                                    <td class='text-right'>1.40%</td>
-                                    <td class='text-right'>13</td>
-                                    <td class='text-right'>0.65%</td>
-                                    <td class='text-right'>15</td>
-                                    <td class='text-right'>0.75%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'>17</td>
-                                    <td>Di atas 75 Tahun</td>
-                                    <td class='text-right'>96</td>
-                                    <td class='text-right'>4.81%</td>
-                                    <td class='text-right'>45</td>
-                                    <td class='text-right'>2.26%</td>
-                                    <td class='text-right'>51</td>
-                                    <td class='text-right'>2.56%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'></td>
-                                    <td>JUMLAH</td>
-                                    <td class='text-right'>1994</td>
-                                    <td class='text-right'>100.00%</td>
-                                    <td class='text-right'>1046</td>
-                                    <td class='text-right'>52.46%</td>
-                                    <td class='text-right'>948</td>
-                                    <td class='text-right'>47.54%</td>
-                                </tr>
-                                <tr class='tr-lebih hide'>
-                                    <td class='text-right'></td>
-                                    <td>BELUM MENGISI</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                    <td class='text-right'>0</td>
-                                    <td class='text-right'>0.00%</td>
-                                </tr>
+                                @endforeach
                                 <tr class='tr-lebih hide'>
                                     <td class='text-right'></td>
                                     <td>TOTAL</td>

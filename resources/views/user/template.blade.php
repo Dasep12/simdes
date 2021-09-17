@@ -64,10 +64,9 @@
                             <li class="dropdown">
                                 <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Produk Desa</a>
                                 <ul role="menu" class="dropdown-menu">
-                                    <li><a href="">Menu item</a></li>
-                                    <li><a href="">Menu item</a></li>
-                                    <li><a href="">Menu item</a></li>
-                                    <li><a href="">Menu item</a></li>
+                                    @foreach($produk as $prd)
+                                    <li><a href="/produk/info/{{ $prd->id }}">{{ $prd->namaProduk }}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="dropdown">

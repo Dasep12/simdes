@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMUmursTable extends Migration
+class CreateMGalleriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateMUmursTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_umurs', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('kelompok');
-            $table->string('perempuan');
-            $table->string('laki_laki');
+        Schema::create('tbl_galleries', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('id_produk');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateMUmursTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_umurs');
+        Schema::dropIfExists('tbl_galleries');
     }
 }

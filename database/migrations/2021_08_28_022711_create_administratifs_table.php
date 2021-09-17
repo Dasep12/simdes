@@ -13,7 +13,7 @@ class CreateAdministratifsTable extends Migration
      */
     public function up()
     {
-        Schema::create('administratifs', function (Blueprint $table) {
+        Schema::create('tbl_wilayah', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('daerah');
             $table->string('jumlah_rt');
@@ -32,6 +32,6 @@ class CreateAdministratifsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('administratifs');
+        Schema::dropIfExists('tbl_wilayah');
     }
 }

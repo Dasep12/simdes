@@ -11,4 +11,6 @@ class Administratif extends Model
         'daerah', 'jumlah_rt', 'jumlah_kk',
         'jumlah_jiwa', 'laki_laki', 'perempuan',
     ];
+
+    protected $table = "tbl_wilayah";
 }

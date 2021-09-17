@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\M_comment;
 
 class M_berita extends Model
 {
@@ -13,4 +14,9 @@ class M_berita extends Model
     ];
 
     protected $table = "Beritas";
+
+    public function comment()
+    {
+        return $this->hasMany(M_comment::class);
+    }
 }

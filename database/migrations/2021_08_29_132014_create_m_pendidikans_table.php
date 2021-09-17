@@ -13,7 +13,7 @@ class CreateMPendidikansTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_pendidikans', function (Blueprint $table) {
+        Schema::create('tbl_pendidikans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('author');
             $table->string('kelompok');
@@ -31,6 +31,6 @@ class CreateMPendidikansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_pendidikans');
+        Schema::dropIfExists('tbl_pendidikans');
     }
 }

@@ -28,7 +28,7 @@
                 <p>{{ Session('success') }}</p>
             </div>
             @endif
-            <a href="/admin/gamas/add" class="btn btn-info mb-2">Tambah Data</a>
+            <a href="/admin/produk/add" class="btn btn-info mb-2">Tambah Data</a>
             <div class="ibox ">
                 <div class="ibox-title">
                     <h5>Data Produk Desa</h5>
