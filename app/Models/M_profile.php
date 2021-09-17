@@ -8,4 +8,9 @@ class M_profile extends Model
 {
     //
 
+    protected $fillable = [
+        'profile', 'author'
+    ];
+
+    protected $table = "tbl_profiles";
 }

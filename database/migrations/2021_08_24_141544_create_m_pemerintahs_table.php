@@ -13,7 +13,7 @@ class CreateMPemerintahsTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_pemerintahs', function (Blueprint $table) {
+        Schema::create('tbl_pemerintahs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('judul');
             $table->longText('pemerintah');
@@ -30,6 +30,6 @@ class CreateMPemerintahsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_pemerintahs');
+        Schema::dropIfExists('tbl_pemerintahs');
     }
 }

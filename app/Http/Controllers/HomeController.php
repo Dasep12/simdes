@@ -15,6 +15,7 @@ use App\Models\M_gamas;
 use App\Models\Pendidikan;
 use App\Models\M_produk;
 use App\Models\Umur;
+use App\Models\Count;
 
 class HomeController extends Controller
 {
@@ -57,16 +58,30 @@ class HomeController extends Controller
     //fungsi detail berita
     public function detailBerita($id, $slug)
     {
+
+        // $ip = $_SERVER['REMOTE_ADDR'];
+        // $cekIP = Count::where('ip', $ip)->where('m_berita_id', $id)->count();
+        // if ($cekIP > 0) {
+        //     $d = Count::where('ip', $ip)->where('m_berita_id', $id)->first();
+        //     $d->view = $d->view + 1;
+        //     $d->update();
+        // } else {
+        //     $inf = new Count();
+
+        //     $inf->ip = $ip;
+        //     $inf->m_berita_id = $id;
+        //     $inf->tanggal = date('y-m-d');
+        //     $inf->view = 1;
+        //     $inf->save();
+        // }
+
         $data  = [
-            // 'data'      => M_berita::where('slug', $slug)->first(),
-            // 'comment'   => M_comment::where('id_post', $id)->orderBy('id', 'desc')->get(),
             'data'      => M_Berita::find($id),
             'gamas'     => M_gamas::all(),
             'berita'    => M_Berita::all(),
             'produk'    => M_produk::all()
         ];
         return view('user.detail_berita', $data);
-        //  echo Request::ip();
     }
 
     //kirim komentar

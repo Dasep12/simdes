@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\User;
 use App\Models\M_gallery;
+use App\Models\M_pemerintah;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,7 +20,8 @@ class DatabaseSeeder extends Seeder
         //\App\Models\M_gallery::factory(10)->create();
 
         //\App\Models\Pendidikan::factory(20)->create();
-        \App\Models\Count::factory(5)->create();
+        //\App\Models\Count::factory(5)->create();
+        \App\Models\M_pemerintah::factory(1)->create();
 
         // M_gallery::create([
         //     'M_produk_id'  => 11,

@@ -10,9 +10,14 @@ class Count extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'ip', 'm_berita_id', 'tanggal', 'view'
+    ];
 
     public function berita()
     {
         return $this->belongsTo(M_berita::class);
     }
+
+    // protected $table = "count";
 }

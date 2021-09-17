@@ -13,7 +13,7 @@ class CreateMSejarahsTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_sejarahs', function (Blueprint $table) {
+        Schema::create('tbl_sejarahs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('sejarah');
             $table->string('author');
@@ -28,6 +28,6 @@ class CreateMSejarahsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_sejarahs');
+        Schema::dropIfExists('tbl_sejarahs');
     }
 }
