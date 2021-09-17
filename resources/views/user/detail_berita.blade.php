@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-header bg-white">
                 <span class="">Posted on {{ $data->created_at }} | <i class="fa fa-user"></i> {{$data->author}}</span><br>
-                <span>dibaca {{$data->viewer}}x <i class="fa fa-book"></i> </span>
+                <span>dibaca {{$data->views->count() }}x <i class="fa fa-book"></i> </span>
             </div>
             <div class="card-body">
                 <h2>{{ $data->title }}</h2>

@@ -15,6 +15,10 @@ class CreateCountsTable extends Migration
     {
         Schema::create('counts', function (Blueprint $table) {
             $table->id();
+            $table->string('ip');
+            $table->foreignId('m_berita_id');
+            $table->timestamp('tanggal');
+            $table->smallInteger('view');
             $table->timestamps();
         });
     }

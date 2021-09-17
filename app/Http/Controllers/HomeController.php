@@ -66,6 +66,7 @@ class HomeController extends Controller
             'produk'    => M_produk::all()
         ];
         return view('user.detail_berita', $data);
+        //  echo Request::ip();
     }
 
     //kirim komentar
