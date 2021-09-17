@@ -14,9 +14,9 @@ class CreateMProduksTable extends Migration
     public function up()
     {
         Schema::create('tbl_produks', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('namaProduk')->nullable();
-            $table->smallInteger('idProduk')->nullable();
+            $table->id();
+            $table->string('namaProduk');
+            $table->smallInteger('idProduk')->unique();
             $table->longText('deskripsi');
             $table->timestamps();
         });
