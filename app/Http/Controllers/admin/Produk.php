@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\M_produk;
 use App\Models\M_gallery;
+use App\Models\M_gamas;
 use Exception;
 use File;
 
@@ -110,5 +111,12 @@ class Produk extends Controller
         }
         $data->delete();
         return redirect('admin/produk')->with('success', 'data berhasil terhapus');
+    }
+
+    public function del_gallery($id)
+    {
+        # code...
+        $data = M_gallery::find($id);
+        echo $data;
     }
 }

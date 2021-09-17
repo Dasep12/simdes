@@ -44,7 +44,24 @@
                     <button class="btn btn-danger">Simpan</button>
                     <a href="/admin/gamas" class="btn btn-info">Kembali</a>
                 </div>
+                <div class="card">
+                    <div class="card-header">
+                        <span>Gallery Produk</span>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            @foreach($data->gallery as $glr)
+                            <tr>
+                                <td><img width="250px" class="img-thumbnail" src="/img/produk/{{ $glr->image }}"></td>
+                                <td><a onclick="return confirm('hapus image ')" href="/admin/produk/del_gallery/{id}">hapus</a></td>
+                            </tr>
+                            @endforeach
+                        </table>
+                        <button class="btn btn-primary">Tambah Gallery</button>
+                    </div>
+                </div>
         </div>
+
     </div>
 </div>
 

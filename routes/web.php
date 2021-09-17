@@ -113,3 +113,4 @@ Route::post('/admin/produk/add', [Produk::class, 'store']);
 Route::get('/admin/produk/edit/{id}', [Produk::class, 'edit']);
 Route::post('/admin/produk/update', [Produk::class, 'update']);
 Route::get('/admin/produk/del/{id}', [Produk::class, 'del']);
+Route::get('/admin/produk/del_gallery/{id}', [Produk::class, 'del_gallery']);
