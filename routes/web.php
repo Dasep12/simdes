@@ -37,6 +37,7 @@ Route::get('/kelumur', [HomeController::class, 'kelumur']);
 Route::post('/komentar', [HomeController::class, 'store_comment']);
 Route::get('/gamas/detail/{id}', [HomeController::class, 'gamas_detail']);
 Route::get('/produk/info/{id}', [HomeController::class, 'produk_detail']);
+Route::post('/sendVote', [HomeController::class, 'sendVote']);
 // 
 
 

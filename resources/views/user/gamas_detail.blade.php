@@ -245,25 +245,30 @@
                 <p>
                     Bagaimana Pelayanan dari Pemerintah Desa ?
                 </p>
-                <form action="">
-                    <div class="i-checks"><label> <input type="radio" value="Tidak Puas" name="a"> <i></i> Tidak Puas </label></div>
-                    <div class="i-checks"><label> <input type="radio" value="Puas" name="a"> <i></i> Puas </label></div>
-                    <div class="i-checks"><label> <input type="radio" value="Sangat Puas" name="a"> <i></i> Sangat Puas </label></div>
+                <form action="/sendVote" method="post">
+                    @csrf
+                    <div class="i-checks"><label> <input type="radio" value="Tidak Puas" name="vote"> <i></i> Tidak Puas </label></div>
+                    <div class="i-checks"><label> <input type="radio" value="Puas" name="vote"> <i></i> Puas </label></div>
+                    <div class="i-checks"><label> <input type="radio" value="Sangat Puas" name="vote"> <i></i> Sangat Puas </label></div>
 
-                    <textarea placeholder="isi alasan disini" class="form-control"></textarea>
+                    <textarea name="alasan" placeholder="isi alasan disini" class="form-control"></textarea>
+
+                    <hr />
+                    <span class="text-muted small">
+                        *data diri anda terlindungi ketika melakukan penilaian*
+                    </span>
+                    <div class="m-t-sm">
+                        <div class="btn-group">
+                            <button class="btn btn-primary btn-sm"><i class="fa fa-send"></i> Sampaikan</button>
+                        </div>
                 </form>
-
-                <hr />
-                <span class="text-muted small">
-                    *data diri anda terlindungi ketika melakukan penilaian*
-                </span>
-                <div class="m-t-sm">
-                    <div class="btn-group">
-                        <button class="btn btn-primary btn-sm"><i class="fa fa-send"></i> Sampaikan</button>
-                    </div>
-                </div>
             </div>
         </div>
+        @if(Session('info'))
+        <script>
+            alert("Pesan di kirim");
+        </script>
+        @endif
         <!-- end of coloom voting -->
 
         <!-- Statistik pengunjung-->

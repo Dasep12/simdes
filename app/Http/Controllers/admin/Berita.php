@@ -8,6 +8,7 @@ use App\Models\M_berita;
 use Illuminate\Foundation\Console\Presets\React;
 use Illuminate\Support\Str;
 use Storage;
+use File;
 
 date_default_timezone_set('Asia/Jakarta');
 
@@ -110,8 +111,8 @@ class Berita extends Controller
         } else {
 
             //delete file jika ada
-            if (Storage::exists("upload/" . $request->nameFile)) {
-                Storage::delete("upload/" . $request->nameFile);
+            if (File::exists("upload/" . $request->nameFile)) {
+                File::delete('upload/' .  $request->nameFile);
             }
 
             $fileName = time() . "." . $request->file->extension();

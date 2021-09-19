@@ -16,6 +16,7 @@ use App\Models\Pendidikan;
 use App\Models\M_produk;
 use App\Models\Umur;
 use App\Models\Count;
+use App\Models\Voting;
 
 class HomeController extends Controller
 {
@@ -59,21 +60,21 @@ class HomeController extends Controller
     public function detailBerita($id, $slug)
     {
 
-        // $ip = $_SERVER['REMOTE_ADDR'];
-        // $cekIP = Count::where('ip', $ip)->where('m_berita_id', $id)->count();
-        // if ($cekIP > 0) {
-        //     $d = Count::where('ip', $ip)->where('m_berita_id', $id)->first();
-        //     $d->view = $d->view + 1;
-        //     $d->update();
-        // } else {
-        //     $inf = new Count();
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $cekIP = Count::where('ip', $ip)->where('m_berita_id', $id)->count();
+        if ($cekIP > 0) {
+            $d = Count::where('ip', $ip)->where('m_berita_id', $id)->first();
+            $d->view = $d->view + 1;
+            $d->update();
+        } else {
+            $inf = new Count();
 
-        //     $inf->ip = $ip;
-        //     $inf->m_berita_id = $id;
-        //     $inf->tanggal = date('y-m-d');
-        //     $inf->view = 1;
-        //     $inf->save();
-        // }
+            $inf->ip = $ip;
+            $inf->m_berita_id = $id;
+            $inf->tanggal = date('y-m-d');
+            $inf->view = 1;
+            $inf->save();
+        }
 
         $data  = [
             'data'      => M_Berita::find($id),
@@ -109,7 +110,7 @@ class HomeController extends Controller
         $data = [
             'data'  => M_profile::first(),
             'gamas'     => M_gamas::all(),
-            'produk'    => M_produk::all()
+            'produk'    => M_produk::all(),
         ];
         return view('user.profile', $data);
     }
@@ -195,5 +196,29 @@ class HomeController extends Controller
             'data'      => Umur::all()
         ];
         return view('user.kelumur', $data);
+    }
+
+
+    //kirim voting 
+    public function sendVote(Request  $req)
+    {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $validate = $req->validate([
+            'vote'      => 'required',
+            'alasan'    => 'required'
+        ]);
+
+        $validate['ip']  = $ip;
+
+        $cek = Voting::where('ip', $ip);
+        if ($cek->count() > 0) {
+            $data  = $cek->first();
+            $data->vote = $req->vote;
+            $data->alasan = $req->alasan;
+            $data->update();
+            return redirect()->back()->with('info', 'penilaian di kirim');
+        } else {
+            Voting::create($validate);
+        }
     }
 }

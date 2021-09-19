@@ -116,48 +116,54 @@
                 <p>
                     Bagaimana Pelayanan dari Pemerintah Desa ?
                 </p>
-                <form action="">
-                    <div class="i-checks"><label> <input type="radio" value="Tidak Puas" name="a"> <i></i> Tidak Puas </label></div>
-                    <div class="i-checks"><label> <input type="radio" value="Puas" name="a"> <i></i> Puas </label></div>
-                    <div class="i-checks"><label> <input type="radio" value="Sangat Puas" name="a"> <i></i> Sangat Puas </label></div>
+                <form action="/sendVote" method="post">
+                    @csrf
+                    <div class="i-checks"><label> <input type="radio" value="Tidak Puas" name="vote"> <i></i> Tidak Puas </label></div>
+                    <div class="i-checks"><label> <input type="radio" value="Puas" name="vote"> <i></i> Puas </label></div>
+                    <div class="i-checks"><label> <input type="radio" value="Sangat Puas" name="vote"> <i></i> Sangat Puas </label></div>
 
-                    <textarea placeholder="isi alasan disini" class="form-control"></textarea>
+                    <textarea name="alasan" placeholder="isi alasan disini" class="form-control"></textarea>
+
+                    <hr />
+                    <span class="text-muted small">
+                        *data diri anda terlindungi ketika melakukan penilaian*
+                    </span>
+                    <div class="m-t-sm">
+                        <div class="btn-group">
+                            <button class="btn btn-primary btn-sm"><i class="fa fa-send"></i> Sampaikan</button>
+                        </div>
                 </form>
-
-                <hr />
-                <span class="text-muted small">
-                    *data diri anda terlindungi ketika melakukan penilaian*
-                </span>
-                <div class="m-t-sm">
-                    <div class="btn-group">
-                        <button class="btn btn-primary btn-sm"><i class="fa fa-send"></i> Sampaikan</button>
-                    </div>
-                </div>
             </div>
         </div>
-        <!-- end of coloom voting -->
-
-        <!-- kolom populer -->
-        <strong>Berita Populer</strong>
-        <div id="vertical-timeline" class="vertical-container light-timeline no-margins">
-            <?php for ($j = 0; $j < 4; $j++) { ?>
-                <div class="vertical-timeline-block">
-                    <div class="vertical-timeline-icon navy-bg">
-                        <i class="fa fa-book"></i>
-                    </div>
-                    <div class="vertical-timeline-content">
-                        <a href="">
-                            <h5>Pembagian Sembako Paket 1 JPS Gemilang</h5>
-                        </a>
-                        <span class="text-small">
-                            Dibaca 806 Kali | Transparansi Dana Desa
-                        </span>
-                    </div>
-                </div>
-            <?php } ?>
-        </div>
-        <!-- end of kolom populer -->
     </div>
+    @if(Session('info'))
+    <script>
+        alert("Pesan di kirim");
+    </script>
+    @endif
+    <!-- end of coloom voting -->
+
+    <!-- kolom populer -->
+    <strong>Berita Populer</strong>
+    <div id="vertical-timeline" class="vertical-container light-timeline no-margins">
+        <?php for ($j = 0; $j < 4; $j++) { ?>
+            <div class="vertical-timeline-block">
+                <div class="vertical-timeline-icon navy-bg">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="vertical-timeline-content">
+                    <a href="">
+                        <h5>Pembagian Sembako Paket 1 JPS Gemilang</h5>
+                    </a>
+                    <span class="text-small">
+                        Dibaca 806 Kali | Transparansi Dana Desa
+                    </span>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+    <!-- end of kolom populer -->
+</div>
 </div>
 <!-- end of colom kanan -->
 
