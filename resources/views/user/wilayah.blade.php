@@ -51,7 +51,7 @@
 
     <!-- colom kanan -->
     <div class="col-lg-4">
-        <div class="ibox ">
+        <!-- <div class="ibox ">
             <div class="ibox-title">
                 <h5>Kategori</h5>
             </div>
@@ -66,7 +66,7 @@
                     <?php } ?>
                 </ul>
             </div>
-        </div>
+        </div> -->
 
         <!-- kolom voting -->
         <div class="ibox">
